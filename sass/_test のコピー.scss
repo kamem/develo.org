@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+@import "import";
+
+
+
+header {
+	position: relative;
+	@include background-4corners('sprite/css1.png');
+	@include display-box-center;
+}
+
+.arrow {
+	padding: 20px;
+	margin: 30px;
+	background: blue;
+	height: 20px;
+	position: relative;
+	
+	@include arrow-set(10px,2px,#fff,left);
+}
+
+$map:sprite-map("sprite/*.png", $spacing: 5px);
+.spriteTest li:nth-child(1) {
+	@include sprite-info($map,css2,true);
+}
+.spriteTest li:nth-child(2) {
+	@include sprite-info($map,css3);
+}
+
+.test10 {
+	content: image-info("img5.gif",width);
+	content: golden-ratio(334px);
+	content: silver-ratio(224%);
+	@include background-fit(("sprite-s943cd9c132.png","img5.gif",linear-gradient(red,#444)),false,('0 0 no-repeat','0 0 no-repeat','0 0 no-repeat'),!important);
+	width: nth($imgWidth,1);
+	height:  nth($imgHeight,1);
+}
+
+.triangle {
+	margin: 30px auto;
+	border: 2px solid red;
+	height: 100px;
+	width: 100px;
+	position: relative;
+	@include triangle-set(30px,red,left);
+	@include triangle-set(100px 100px,red,right,50%,before);
+	-webkit-filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.5));
+}
+
+/*----------------------------------------
+	Selectors 書き方
+----------------------------------------*/
+ul {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 2px solid pink;
+	background-color: #fff;
+	
+	&[class^=num] li {
+		padding: 0.2em 0.5em;
+		font-size: fz(12);
+		@include fz(12);
+		line-height: 1.6;
+		color: #fff;
+
+		&:nth-child(even) {
+			background-color: #0CC;
+		}
+		&:nth-child(odd) {
+			background-color: orange;
+		}
+	}
+
+	&.num3 li {
+		&:nth-child(even) {
+			background-color: green;
+		}
+		&:nth-child(odd) {
+			background-color: pink;
+		}
+	}
+	
+	@for $i from 1 through 4 {
+		&.num#{$i}:after {
+			content: ":afterで追加したテキスト#{$i}";
+		}
+	}
+	
+	& li:hover {
+			background-color: green;
+	}
+}
+
+/*----------------------------------------
+	for文で繰り返し
+----------------------------------------*/
+/* 通常 */
+@for $i from 1 through 5 {
+	.item#{$i} {
+		background-image: url(images/test#{$i});
+	}
+}
+
+/* 先頭に0を付ける */
+// zeropadding(ゼロの数, $i)
+$tmp: "";
+@for $i from 1 through 5 {
+	$tmp: zeropadding(2, $i);
+	.item#{$tmp} {
+		background-image: url(images/test#{$tmp});
+	}
+}
+
+/*----------------------------------------
+	グラデーション
+----------------------------------------*/
+p#gradient {
+	@include background(linear-gradient(left, blue 5%, #6f156c 35%, #fd7c00 65%, #002874 95%));
+	font-size: fz(23);
+	color: #fff;
+}
+
+/*----------------------------------------
+	extend 出力するcssを分けている場合は
+	他のcssに大してはextend出来ないみたいです。
+----------------------------------------*/
+p.common {
+	margin: 0;
+	padding: 0;
+}
+
+.test {
+	@extend p.common;
+	//@extend .clearfix:after;
+}
+
+.test{
+	width: nth(image-info(('img1.gif','img3.gif'),width,true),2);
+	height: $imgHeight;
+}
+
+/*----------------------------------------
+	font-size pxを%に変換
+----------------------------------------*/
+.test {
+	font-size: fz(12);
+}
+.test {
+	font-size: fz(30);
+}
+/* 8以下は8になるよ */
+.test {
+	font-size: fz(1);
+}
+/* 40以上は40になるよ */
+.test {
+	font-size: fz(100);
+}
+
+/*----------------------------------------
+	fs(目的のサイズ,継承したサイズ)
+	小数点以下は3桁
+----------------------------------------*/
+// 13を基準に、15のemを計算
+.test {
+	font-size: fs(15,13);
+}
+// 13を基準に、15の%を計算
+.test {
+	font-size: fs(15,13,'%');
+}
+
+/*----------------------------------------
+	css3
+----------------------------------------*/
+.test {
+	height: 100px;
+	background: red;
+	text-align: center;
+	
+/* 関数で 値を指定 */
+	font-family: $fontFamily;
+	width: $baseWidth;
+
+// IE Hack
+/* opacity */
+	@include opacity(0.8);
+
+/* min-height */
+	@include min-height(100px);
+
+/* inline-block */
+	@include inline-block();
+
+
+/* box-sizing */
+	@include box-sizing(border-box);
+
+/* border-radius */
+	@include border-radius(100px);
+
+/* background-size */
+	@include background-size(contain);
+
+/* box-shadow */
+	@include box-shadow(
+	1px 1px 3px rgba(blue,1),
+	1px 1px 3px rgba(blue, 1),
+	1px 1px 3px rgba(blue, 1)
+	);
+
+/* text-shadow */
+	@include text-shadow(
+	rgba(blue, 0.2) 1px 1px 0,
+	rgba(blue, 0.2) 2px 2px 0,
+	rgba(blue, 0.2) 3px 3px 0
+	);
+
+/* 同じtext-shadowを繰り返したい場合 */
+// text-shadow-repeat(5px 0 10px rgba(0, 0, 0, 0.3),繰り返したい数);
+	@include text-shadow-repeat(0 0 2px rgba(255, 255, 255, 1),15);
+
+/* transition */
+	@include transition(margin-left 0.25s ease-out,padding 0.25s ease-out);
+	@include transition(all 0.25s ease-out);
+
+/* transition単品で transformを指定した場合ベンダーフィックスがつかない */
+	@include transition(transform 0.25s ease-out);
+	
+/* 単独だとつきます */
+	@include transition-property(transform);
+	@include transition-duration(0.5s);
+	@include transition-delay(0.1s);
+	@include transition-timing-function(ease-in);
+	
+/* transform βのようです。 */
+// firefoxだとperspectiveの数値にpxが付いていないとダメのようです。
+// なのでこのまま使うとダメですね・・。compass バージョンアップに期待、もしくはmixinを少しいじる必要がありますね。
+//１つだけの場合はtransformを使い、副す書きたい場合はcreate-transformを使わないとダメなのかな？
+    @include transform(rotate(720deg));
+    
+// create-transform($perspective, $scale-x, $scale-y, $scale-z, $rotate-x, $rotate-y, $rotate-z, $rotate3d, $trans-x, $trans-y, $trans-z, $skew-x, $skew-y, $origin-x, $origin-y, $origin-z, $only3d);
+	@include create-transform(
+		//$perspective
+		800px,
+		//$scale-x
+		false,
+		//$scale-y
+		false,
+		//$scale-z
+		false,
+		//$rotate-x
+		false,
+		//$rotate-y
+		false,
+		//$rotate-z
+		false,
+		//$rotate3d
+		(1,5,5,10deg),
+		//$trans-x
+		false,
+		//$trans-y
+		false,
+		//$trans-z
+		false,
+		//$skew-x
+		false,
+		//$skew-y
+		false,
+		//$origin-x
+		false,
+		//$origin-y
+		false,
+		//$origin-z
+		false,
+		//$only3d
+		false
+	);
+	
+	&:hover {
+		@include create-transform(
+		//$perspective
+		false,
+		//$scale-x
+		false,
+		//$scale-y
+		false,
+		//$scale-z
+		false,
+		//$rotate-x
+		false,
+		//$rotate-y
+		false,
+		//$rotate-z
+		false,
+		//$rotate3d
+		(3,40,-200,10deg),
+		//$trans-x
+		false,
+		//$trans-y
+		false,
+		//$trans-z
+		false,
+		//$skew-x
+		false,
+		//$skew-y
+		false,
+		//$origin-x
+		false,
+		//$origin-y
+		false,
+		//$origin-z
+		false,
+		//$only3d
+		false
+	);
+	}
+}
+
+/*----------------------------------------
+	MediaQuery
+	そのなかのクラスにextendすることもできみたい。
+----------------------------------------*/
+.media {
+	width: 320px;
+	@extend .media2
+}
+
+.media2 {
+	@media screen and (max-width: 479px) {
+		width: 320px;
+	}
+
+	@media screen and (min-width: 480px) {
+		width: 480px;
+	}
+
+	// 値がない場合は書き出されない
+	@media screen and (min-width: 680px) {
+	}
+}
+
+/*----------------------------------------
+	アニメーション
+----------------------------------------*/
+p.test2:hover {
+	@include animation-name(anime1);
+	@include animation-duration(5s);
+	@include animation-timing-function(ease);
+	@include animation-iteration-count(infinite);
+}
+
+/* keyframe */
+@include keyframes(anime1) {
+  0% {
+    @include transform(rotate(720deg));
+  }    
+  100% {
+  	width: 500px;
+    @include transform(rotate(0deg));
+  }
+}
+
+/*----------------------------------------
+	sassの機能
+----------------------------------------*/
+.test2 {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: fz(30);
+	letter-spacing: -0.1em;
+	
+// 色まぜまぜ
+	background-color: mix(red , blue ,50%);
+	color: mix(red , yellow ,50%);
+
+// %の計算
+	width: percentage(100px / 300px);
+
+// 四捨五入
+width: round(percentage(100px / 300px));
+//くり上げ
+width: ceil(percentage(100px / 300px));
+// 切り捨て
+width: floor(percentage(100px / 300px));
+// 絶対値
+width: abs(-300px);
+// 値の型の取得
+@include transition-property(type-of(#fff));
+
+// 値の単位の取得
+$testNum:100px;
+height: 300#{unit($testNum)};
+
+@include background(linear-gradient(top, #030303 0%, #373737 49%, #3c3c3c 49%, #424242 100%));
+
+	@include background(linear-gradient(top, #e6e6e6 0%, #fff 100%));
+}

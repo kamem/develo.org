@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+$images_dir: "html/img/";
+
+//HTML5の場合は「true」
+$html5: true;
+//Retina対応
+$isRetina: false;
+
+//compass ブラウザサポート
+$legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true;
+
+$experimental-support-for-webkit: true;
+$experimental-support-for-mozilla: true;
+$experimental-support-for-opera: true;
+$experimental-support-for-microsoft: true;
+$experimental-support-for-khtml: false;
+
+//ie9用 svg
+$experimental-support-for-svg: true;
+
+
+//font-
+$fontSizeDefault: 10;
+$fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+
+//ページの横幅
+$baseWidth: 80%;
+
+//標準テキストカラー
+$textColor: #333;
+
+//標準リンクカラー
+$linkColor: #06f;
+$linkColor_hover: #00f;
+$linkColor_visited: #39f;
+$linkColor_active: #00faaa;

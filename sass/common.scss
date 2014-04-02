@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+@import "import";
+
+#header,
+main,
+#footer {
+	margin: 0 auto;
+	text-align: left;
+	width: $baseWidth;
+	position: relative;
+	background: #f1f1f1;
+	overflow: hidden;
+	@include box-shadow(2px 2px 3px rgba(0,0,0,0.15));
+	
+	h1 {
+		text-align: center;
+		padding: 3em;
+	}
+
+	@media screen and (max-width: 479px) {
+		width: 320px;
+	}
+
+	@media screen and (min-width: 480px) {
+	}
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+}
+
+/*----------------------------------------
+	content
+----------------------------------------*/
+main {
+	h2 {
+		padding: 0.3em 20px;
+		padding: 0.3em fs(20);
+		marign-bottom: 1em;
+	}
+	h3 {
+		margin: 0.3em 0;
+		padding: 0.3em 20px;
+		padding: 0.3em fs(20);
+		background: #666;
+		color: #fff;
+	}
+	h4 {
+		margin: 0.3em 0;
+		padding: 0.3em 20px;
+		padding: 0.3em fs(20);
+	}
+	
+	p {
+		margin: 1em 0;
+	}
+	
+	section {
+		margin-bottom: 1em;
+	}
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer {
+	p {
+		padding: 0.5em;
+	}
+}
+
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+@include clearfix((
+	'.clearfix'
+));
