@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+@import "_extension_import";
+
+@import "_module/_category",
+"_module/_data",
+"_module/_detailsSelect",
+"_module/_dl.table",
+"_module/_download",
+"_module/_em",
+"_module/_pageNav",
+"_module/_pagetop",
+"_module/_service",
+"_module/_tags",
+"_module/_commntList";
+
+
+/*----------------------------------------
+	img
+----------------------------------------*/
+.main {
+	$mainWidth: 798;
+	margin: 0 auto  fs(38) auto !important;
+	max-width: fs($mainWidth) !important;
+	max-height: fs(silver-ratio($mainWidth) - $mainWidth) !important;
+	overflow: hidden;
+	
+	img {
+		width: fs($mainWidth);
+	}
+}
+
+img.noResize,
+.noResize img,
+table img {
+	width: inherit !important;
+	height: inherit !important;
+}
+
+.noResize {
+	text-align: center;
+}
+
+/*----------------------------------------
+	center
+----------------------------------------*/
+.center {
+	text-align: center;
+}
+
+/*----------------------------------------
+	Float
+----------------------------------------*/
+figure.img_R img {
+	margin-left: fs(($base-width-big - $base-width) / 2);
+	width: fs($base-width - silver-ratio($base-width,true)) !important;
+	float: right;
+	height: auto;
+	
+	@media screen and (max-width: 480px) {
+		 width: 100% !important;
+	}
+}
+
+/*----------------------------------------
+	more
+----------------------------------------*/
+p.more {
+	margin-bottom:  fs(silver-ratio(-$font-size)) !important;
+}
+
+/*----------------------------------------
+	reaction
+----------------------------------------*/
+.reaction {
+	$font-size: 16;
+	margin: 0 auto;
+	max-width: fs($base-width,16);
+	line-height: fs(silver-ratio($font-size));
+	text-align: right;
+	@include fz($font-size);
+
+	li {
+		margin-left: fs($font-size);
+		@include inline-block;
+	}
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,target-densitydpi=device-dpi">
+
+<meta name="copyright" content="">
+<meta name="keywords" content="">   
+<meta name="description" content="">
+<title>テキストテスト</title>
+
+<link rel="stylesheet" href="css/import.css">
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/import.js"></script> 
+<script>
+</script> 
+</head>
+
+<body>
+<header id="header">
+	<h1><a href="http://kame.s42.coreserver.jp/test/">Develo.org</a></h1>
+	<p class="description">CSS、XHTML、Movable Type、デザイン、絵を描いたり...。</p>
+	<nav>
+		<h1>Navigation</h1>
+		<p class="topicpath"><a href="http://develo.org/html5/" class="home">ホーム</a> &gt; <a href="http://develo.org/html5/xhtmlcss/" title="XHTML,CSS カテゴリー" class="xhtmlcss">XHTML,CSS</a> &gt; <em>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</em></p>
+	
+		<ul class="flip">
+			<li class="newer"><a href="http://develo.org/html5/2010/06/02/0148.html" title="さくらだよ。" rel="nofollow">次の記事へ</a></li>
+			<li class="older"><a href="http://develo.org/html5/2010/01/02/1746.html" title="あけましておめでとうございます" rel="nofollow">前の記事へ</a></li>
+		</ul>
+		<ul class="guide">
+			<li class="list"><a href="http://develo.org/html5/archives.html">色々一覧</a></li>
+			<li class="about"><a href="http://develo.org/html5/about.html">サイトについて</a></li>
+			<li class="profiles"><a href="http://develo.org/html5/profires.html">プロフィール</a></li>
+			<li class="bookmarks"><a href="http://develo.org/html5/bookmarks/">ブックマーク</a></li>
+			<li class="rss"><a href="http://feeds.feedburner.jp/develo">RSS</a></li>
+			<li class="search"><a href="#search">検索</a></li>
+			<li class="setup"><a href="#setup">設定</a></li>
+		</ul>
+
+		<form method="get" action="http://develo.org/mt/mt-search.cgi" id="searchBox">
+			<fieldset>
+			<legend><label for="search">Develo.org内の検索</label></legend>
+			<input type="hidden" name="IncludeBlogs" value="2" />
+			<input id="search-text" name="search" size="16" value="" />
+			<input type="submit" class="button search" value="検索" />
+			</fieldset>
+		</form>
+	</nav>
+</header>
+
+
+<div id="content">
+	<article>
+
+		<header>
+			<h1>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</h1>
+			<ul class="data">
+				<li class="name">kamem</li>
+				<li class="date"><time pubdate="2010-09-05T13:01:54">2010&#24180;09&#26376;05&#26085; (日)</time></li>
+				<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a></li>
+				<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a> | <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=jQuery&amp;limit=20" title="2">jQuery</a></li>
+			</ul>
+		<!--	<ul class="service">
+				<li class="hatena"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+				<li class="facebook"><div class="fb-like" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true" data-font="segoe ui"></div><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></li>
+				<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+				<li class="google"><div class="g-plusone" data-size="medium" data-width="120"></div><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script></li>
+				<li class="grow"><script type="text/javascript" src="http://growbutton.com/javascripts/button.js?apikey=69a86a80-66a5-012f-0692-12313f00aced&shape=rectangle"></script></li>
+			</ul>-->
+		</header>
+
+<div class="content">
+			<p>というのをまとめてくれ、と某知人にいわれましたので、まとめてみることにします。(大雑把にですが)</p>
+
+			<div id="more">
+				
+				<dl class="pageNav">
+					<dt><a href="#pageNav">目次</a></dt>
+					<dd>
+						<ul>
+							<li class="pageNav1"><a href="#tag1">ボディー(body)</a></li>
+							<li class="pageNav2"><a href="#tag2">見出しタグ(h1〜h6)</a></li>
+							<li class="pageNav3"><a href="#tag3">段落(p)</a></li>
+							<li class="pageNav4"><a href="#tag4">リスト(ul,ol)</a></li>
+							<li class="pageNav5"><a href="#tag5">リスト(li)</a></li>
+							<li class="pageNav6"><a href="#tag6">定義リスト(dl)</a></li>
+							<li class="pageNav7"><a href="#tag7">定義リスト定義部分(dt)</a></li>
+							<li class="pageNav8"><a href="#tag8">定義リスト用語部分(dd)</a></li>
+							<li class="pageNav9"><a href="#tag9">強調(em,strong)</a></li>
+							<li class="pageNav10"><a href="#tag10">構造(div,span)</a></li>
+							<li class="pageNav11"><a href="#tag11">引用(blockquote,q)</a></li>
+							<li class="pageNav12"><a href="#tag12">整形済みテキスト(pre)</a></li>
+							<li class="pageNav13"><a href="#tag13">フォーム(form)</a></li>
+							<li class="pageNav14"><a href="#tag14">追加、削除(ins,del)</a></li>
+							<li class="pageNav15"><a href="#tag15">表(table)</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<section id="tag1">
+					<h2>ボディー(body)</h2>
+					<p>ちゃんとタグで囲ってあればOK(インライン要素のみだとだめ)。何もマークアップしてないテキストはいれることができません。</p>
+					<section>
+						<h3>ブロック要素</h3>
+						<ul>
+							<li>p</li>
+							<li>h</li>
+							<li>ul</li>
+							<li>ol</li>
+							<li>dl</li>
+							<li>div</li>
+							<li>blockquote</li>
+							<li>pre</li>
+							<li>form</li>
+							<li>table</li>
+						</ul>
+					</section>
+				</section>
+				<section id="tag2">
+					<h2>見出しタグ(h1〜h6)</h2>
+					<p>インライン要素、画像です。ブロック要素はいれられません。</p>
+					<section>
+						<h3>インライン要素</h3>
+						<ul>
+							<li>a</li>
+							<li>em</li>
+							<li>strong</li>
+							<li>span</li>
+							<li>q</li>
+							<li>img</li>
+						</ul>
+					</section>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag3">
+					<h2>段落(p)</h2>
+					<p>インライン要素か、または画像です。ブロック要素はいれられません。</p>
+					<section>
+						<h3>インライン要素</h3>
+						<ul>
+							<li>a</li>
+							<li>em</li>
+							<li>strong</li>
+							<li>span</li>
+							<li>q</li>
+							<li>img</li>
+						</ul>
+					</section>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag4">
+					<h2>リスト(ul,ol)</h2>
+					<p>直接にはliしかいれることができません。</p>
+					<ul>
+						<li>li</li>
+					</ul>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag5">
+					<h2>リスト(li)</h2>
+					<p>なんでもいれられます。</p>
+					<div class="line">
+					<section class="line">
+						<h3>ブロック要素</h3>
+						<ul>
+							<li>p</li>
+							<li>h</li>
+							<li>ul</li>
+							<li>ol</li>
+							<li>dl</li>
+							<li>div</li>
+							<li>blockquote</li>
+							<li>pre</li>
+							<li>form</li>
+							<li>table</li>
+						</ul>
+					</section>
+					<section class="line">
+						<h3>インライン要素</h3>
+						<ul>
+							<li>a</li>
+							<li>em</li>
+							<li>strong</li>
+							<li>span</li>
+							<li>q</li>
+							<li>img</li>
+						</ul>
+					</section>
+					</div>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag6">
+					<h2>定義リスト(dl)</h2>
+					<p>直接にはdt,ddしかいれることができません。</p>
+					<ul>
+						<li>dt</li>
+						<li>dd</li>
+					</ul>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag7">
+					<h2>定義リスト定義部分(dt)</h2>
+					<p>インライン要素か、または画像です。ブロック要素はいれられません。</p>
+					<section>
+						<h3>インライン要素</h3>
+						<ul>
+							<li>a</li>
+							<li>em</li>
+							<li>strong</li>
+							<li>span</li>
+							<li>q</li>
+							<li>img</li>
+						</ul>
+					</section>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag8">
+					<h2>定義リスト用語部分(dd)</h2>
+					<p>なんでもいれられます。</p>
+					<div class="line">
+						<section class="line">
+							<h3>ブロック要素</h3>
+							<ul>
+								<li>p</li>
+								<li>h</li>
+								<li>ul</li>
+								<li>ol</li>
+								<li>dl</li>
+								<li>div</li>
+								<li>blockquote</li>
+								<li>pre</li>
+								<li>form</li>
+								<li>table</li>
+							</ul>
+						</section>
+						<section class="line">
+							<h3>インライン要素</h3>
+							<ul>
+								<li>a</li>
+								<li>em</li>
+								<li>strong</li>
+								<li>span</li>
+								<li>q</li>
+								<li>img</li>
+							</ul>
+						</section>
+					</div>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag9">
+					<h2>強調(em,strong)</h2>
+					<p>インライン要素のみ、あと画像です。emのなかにspanでまた囲むというのはおかしいので、なるべくやめておきましょう。</p>
+					<section>
+						<h3>インライン要素</h3>
+						<ul>
+							<li class="feebly">a</li>
+							<li class="feebly">em</li>
+							<li class="feebly">strong</li>
+							<li class="feebly">span</li>
+							<li class="feebly">q</li>
+							<li>img</li>
+						</ul>
+					</section>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag10">
+					<h2>構造(div,span)</h2>
+					<dl>
+						<dt>div</dt>
+						<dd>
+							<p>なんでもOKです。だけど、文字だけ囲うというのはなるべくさけましょう。構造以外の意味はないので、なるべく、意味づけできるタグで文字は囲うように心がけましょう。</p>
+							<div class="line">
+								<section class="line">
+									<h3>ブロック要素</h3>
+									<ul>
+										<li>p</li>
+										<li>h</li>
+										<li>ul</li>
+										<li>ol</li>
+										<li>dl</li>
+										<li>div</li>
+										<li>blockquote</li>
+										<li>pre</li>
+										<li>form</li>
+										<li>table</li>
+									</ul>
+								</section>
+								<section class="line">
+									<h3>インライン要素</h3>
+									<ul>
+										<li>a</li>
+										<li>em</li>
+										<li>strong</li>
+										<li>span</li>
+										<li>q</li>
+										<li>img</li>
+									</ul>
+								</section>
+							</div>
+						</dd>
+						<dt class="clear">span</dt>
+						<dd>
+							<p>インライン要素のみ、あと画像です。spanのなかにspanでまた囲むというのはおかしいので、なるべくやめておきましょう。</p>
+							<section>
+								<h3>インライン要素</h3>
+								<ul>
+									<li class="feebly">a</li>
+									<li class="feebly">em</li>
+									<li class="feebly">strong</li>
+									<li class="feebly">span</li>
+									<li class="feebly">q</li>
+									<li>img</li>
+								</ul>
+							</section>
+						</dd>
+					</dl>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag11">
+					<h2>引用(blockquote,q)</h2>
+					<dl>
+						<dt>blockquote</dt>
+						<dd>
+							<p>ちゃんとタグで囲ってあればOK(インライン要素のみだとだめ)。blockquoteの中もちゃんとマークアップしてあげましょう。</p>
+							<section>
+								<h3>ブロック要素</h3>
+								<ul>
+									<li>p</li>
+									<li>h</li>
+									<li>ul</li>
+									<li>ol</li>
+									<li>dl</li>
+									<li>div</li>
+									<li>blockquote</li>
+									<li>pre</li>
+									<li>form</li>
+									<li>table</li>
+								</ul>
+							</section>
+						</dd>
+						<dt>q</dt>
+						<dd>
+							<p>インライン要素のみ、あと画像です。qのなかにspanでまた囲むというのはおかしいので、なるべくやめておきましょう。</p>
+							<section>
+								<h3>インライン要素</h3>
+								<ul>
+									<li class="feebly">a</li>
+									<li class="feebly">em</li>
+									<li class="feebly">strong</li>
+									<li class="feebly">span</li>
+									<li class="feebly">q</li>
+									<li>img</li>
+								</ul>
+							</section>
+						</dd>
+					</dl>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag12">
+					<h2>整形済みテキスト(pre)</h2>
+					<p>インライン要素のみ。画像もだめみたいです。ブロック要素はいれられません。</p>
+					<section>
+						<h3>インライン要素</h3>
+						<ul>
+							<li>a</li>
+							<li>em</li>
+							<li>strong</li>
+							<li>span</li>
+							<li>q</li>
+						</ul>
+					</section>
+				</section>
+				<section id="tag13">
+					<h2>フォーム(form)</h2>
+					<p>ちゃんとタグで囲ってあればOK(インライン要素のみだとだめ)。何もマークアップしてないテキストはいれることができません。</p>
+					<section>
+						<h3>ブロック要素</h3>
+						<ul>
+							<li>p</li>
+							<li>h</li>
+							<li>ul</li>
+							<li>ol</li>
+							<li>dl</li>
+							<li>div</li>
+							<li>blockquote</li>
+							<li>pre</li>
+							<li>table</li>
+							<li>fieldset</li>
+							<li>legend</li>
+						</ul>
+					</section>
+					<dl>
+						<dt>fieldset</dt>
+						<dd>
+							<div class="line">
+							<section class="line">
+								<h3>ブロック要素</h3>
+								<ul>
+									<li>p</li>
+									<li>h</li>
+									<li>ul</li>
+									<li>ol</li>
+									<li>dl</li>
+									<li>div</li>
+									<li>blockquote</li>
+									<li>pre</li>
+									<li>form</li>
+									<li>table</li>
+								</ul>
+							</section>
+							<section class="line">
+								<h3>インライン要素</h3>
+								<ul>
+									<li>a</li>
+									<li>em</li>
+									<li>strong</li>
+									<li>span</li>
+									<li>q</li>
+									<li>img</li>
+								</ul>
+							</section>
+							</div>
+						</dd>
+						<dt class="clear">legend</dt>
+						<dd>
+							<section>
+								<h3>インライン要素</h3>
+								<ul>
+									<li>a</li>
+									<li>em</li>
+									<li>strong</li>
+									<li>span</li>
+									<li>q</li>
+									<li>img</li>
+								</ul>
+							</section>
+						</dd>
+					</dl>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag14">
+					<h2>追加、削除(ins,del)</h2>
+					<p>特殊なタグです。なんの中に入れることもできますし、なんの中にもはいれることができます。</p>
+					<div class="line">
+						<section class="line">
+							<h3>ブロック要素</h3>
+							<ul>
+								<li>p</li>
+								<li>h</li>
+								<li>ul</li>
+								<li>ol</li>
+								<li>dl</li>
+								<li>div</li>
+								<li>blockquote</li>
+								<li>pre</li>
+								<li>form</li>
+								<li>table</li>
+							</ul>
+						</section>
+						<section class="line">
+							<h3>インライン要素</h3>
+							<ul>
+								<li>a</li>
+								<li>em</li>
+								<li>strong</li>
+								<li>span</li>
+								<li>q</li>
+								<li>img</li>
+							</ul>
+						</section>
+					</div>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+				<section id="tag15">
+					<h2>表(table)</h2>
+					<ul>
+						<li>tr</li>
+						<li>th</li>
+						<li>td</li>
+						<li>caption</li>
+						<li>thead</li>
+						<li>tbody</li>
+						<li>tfoot</li>
+						<li>colgroup</li>
+					</ul>
+					<dl>
+						<dt>thead,tbody,tfoot</dt>
+						<dd>
+							<ul>
+								<li>tr</li>
+								<li>th</li>
+								<li>td</li>
+							</ul>
+						</dd>
+						<dt>colgroup</dt>
+						<dd>
+							<ul>
+								<li>col</li>
+							</ul>
+						</dd>
+					</dl>
+				</section>
+				<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+
+			</div>
+
+</div>
+
+		<section id="comments">
+			<h2>コメント<span class="count">63</span></h2>
+			<form method="post" action="http://develo.org/mt/mt-comments.cgi" id="commentsForm" onsubmit="return mtCommentOnSubmit(this)">
+<script language="JavaScript" type="text/javascript">
+<!-- 
+function keystrokes(form) {
+    form.strokes.value = 1;
+}
+//-->
+</script>
+<input type="hidden" name="strokes" value="0" />
+
+				<fieldset>
+				<legend>コメントフォーム</legend>
+				<input type="hidden" name="static" value="1" />
+				<input type="hidden" name="entry_id" value="2" />
+				<input type="hidden" name="__lang" value="ja" />
+				<dl class="form">
+					<dt class="name"><label for="comment-author">名前</label></dt>
+					<dd class="name"><input id="comment-author" name="author" size="30" value="" /></dd>
+					<dt class="mail"><label for="comment-email">メールアドレス</label></dt>
+					<dd class="mail"><input id="comment-email" name="email" size="30" value="" /></dd>
+					<dt class="url"><label for="comment-url"><abbr title="Uniform Resource Identifer">URI</abbr></label></dt>
+					<dd class="url"><input id="comment-url" name="url" size="30" value="" /></dd>
+					<dt class="info"><label for="comment-bake-cookie">情報を保存しますか？</label></dt>
+					<dd class="info"><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" onkeypress="mtRememberMeOnClick(this)" value="1" accesskey="r" /></dd>
+					<dt class="comment"><label for="comment-text">コメント <span>(スタイル指定用の一部の <abbr title="Hyper Text Markup Language">HTML</abbr>タグが使用できます。)</span></label></dt>
+					<dd class="comment"><textarea id="comment-text" name="text" rows="10" cols="50" onkeypress="keystrokes(this.form)"></textarea></dd>
+				</dl>
+				<p id="comments-open-footer"><input type="submit" class="button preview" id="comment-preview" name="preview" value="確認" /><input type="submit" class="button post" value="送信" onclick="keystrokes(this.form)" /></p>
+				</fieldset>
+				<script type="text/javascript">
+					<!--
+					mtAttachEvent("load", mtEntryOnLoad);
+					mtAttachEvent("unload", mtEntryOnUnload);
+					//-->
+				</script>
+			</form>
+			<dl class="log">
+				<dt id="comment60290">瀬戸 : <span class="date">2011&#24180;07&#26376;29&#26085; (金) 19:53</span></dt>
+				<dd>
+				<p>よろしく</p>
+				</dd>
+				<dt id="comment73513">jquery lover : <span class="date">2011&#24180;10&#26376;17&#26085; (月) 16:31</span></dt>
+				<dd>
+				<p>ぜんぜん使えませんでしたけど。。</p>
+				</dd>
+				<dt id="comment73514">kamem : <span class="date">2011&#24180;10&#26376;18&#26085; (火) 18:28</span></dt>
+				<dd>
+				<p>ごめんなさい m(_ _ )m<br />
+時間があれば、もっといろんな動きを追加していきたいとおもってます！</p>
+				</dd>
+				<dt id="comment73518">loveThisCode : <span class="date">2012&#24180;01&#26376;26&#26085; (木) 19:11</span></dt>
+				<dd>
+				<p>こんばんは。<br />
+ありがたく使用させていただいています！</p>
+
+<p>1点だけお伺いしたいのですが、<br />
+複数ページにティッカーを表示させてて、ページ遷移してると<br />
+時々ティッカーが流れないときがあります・・・<br />
+使用している動きはmove１です。<br />
+対策ってありますでしょうか？</p>
+				</dd>
+				<dt id="comment73519">kamem : <span class="date">2012&#24180;01&#26376;28&#26085; (土) 14:25</span></dt>
+				<dd>
+				<p>> loveThisCodeさん</p>
+
+<p>同じページに複数のティッカーを埋め込んでいるということでしょうか？</p>
+
+<p>んー、原因はすぐにはわからないです・・。<br />
+もし解決できましたら、修正しますね。</p>
+				</dd>
+			</dl>
+
+		</section>
+
+		<section id="trackbacks">
+			<h2>トラックバック<span class="count">13</span></h2>
+			<p class="url">http://develo.org/mt/mt-tb.cgi/2</p>
+			<dl class="log">
+				<dt id="ping-1"><a href="http://hal-lab.cocolog-nifty.com/blog/2010/04/dldtdd3px-2ae2.html">dl,dt,ddの擬似テーブルで3pxのずれを直す方法</a> : <span class="date">2010年4月20日 09:44</span></dt>
+				<dd>dtとddを横並びの擬似テーブルにする場合、IE6だと3pxのずれが生じます。そ</dd>
+			</dl>
+		</section>
+	</article>
+
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+
+</div>
+
+<footer id="footer">
+	<p class="topicpath"><a href="http://develo.org/" class="home">ホーム</a></p>
+	<ul class="support">
+		<li id="powered">Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type 5.01</a></li>
+		<li id="template">Template by <a href="http://develo.org/">mtDevelo</a></li>
+	</ul>
+	<p class="copyright"><small>Copyright &copy; Develo.org All Rights Reserved.</small></p>
+</footer>
+</body>
+</html>

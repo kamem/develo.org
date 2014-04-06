@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+@import "_extension_import";
+
+#header,
+main,
+#footer {
+	text-align: left;
+
+	@media screen and (max-width: 479px) {
+		width: 320px;
+	}
+
+	@media screen and (min-width: 480px) {
+	}
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+}
+
+/*----------------------------------------
+	content
+----------------------------------------*/
+main {
+}
+
+.content {
+	$em-width: 40;
+	$base-width: 736;
+	$letter-spacing: 2.4;
+
+	img {
+		width: $base-width + px;
+	}
+	
+	figure,
+	p,
+	li,
+	dt,
+	dd {
+		line-height: silver-ratio(16) + px;
+		letter-spacing: $letter-spacing + px;
+	}
+	
+	dl,
+	ul,
+	ol {
+		margin: silver-ratio(16) + 16 + px 0;
+	}
+	
+	li {
+		margin-bottom: silver-ratio(16) + px;
+	}
+
+	ul li {
+	}
+	
+	figure,
+	p {
+		margin-bottom: silver-ratio(16) + px;
+	}
+	
+	figcaption {
+		margin-top: 19px;
+	}
+
+	section {
+		padding: 19px 0;
+		section {
+		}
+	}
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer {
+	p {
+		padding: 0.5em;
+	}
+}
+
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+
+.main {
+	$mainWidth: 798;
+	margin: 0 auto  fs(38) auto !important;
+	max-width: fs($mainWidth) !important;
+	max-height: fs(silver-ratio($mainWidth) - $mainWidth) !important;
+	overflow: hidden;
+	
+	img {
+		width: fs($mainWidth);
+	}
+}
+
+img.noResize,
+.noResize img,
+table img {
+	width: inherit !important;
+	height: inherit !important;
+}
+
+.noResize {
+	text-align: center;
+}
+
+@include clearfix((
+	'.clearfix'
+));

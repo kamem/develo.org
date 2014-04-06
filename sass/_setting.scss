@@ -23,10 +23,13 @@ $experimental-support-for-svg: true;
 
 //font-
 $fontSizeDefault: 10;
+$font-size: 16;
+$font-unit: rem;
 $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
 
 //ページの横幅
-$baseWidth: 80%;
+$base-width: 736;
+$base-width-big: 798;
 
 //標準テキストカラー
 $textColor: #333;

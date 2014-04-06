@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,target-densitydpi=device-dpi">
+
+<meta name="copyright" content="">
+<meta name="keywords" content="">   
+<meta name="description" content="">
+<title>テキストテスト</title>
+
+<link rel="stylesheet" href="css/import.css">
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/smoothAnchor.js"></script> 
+<script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+
+
+$(function(){
+	prettyPrint();
+	
+	
+	if($.cookie('detailsSelect') == 'off') {
+		$(".detailsSelect").toggleClass("off");
+		$("article article").addClass("off");
+		$.cookie('detailsSelect', 'off', { expires: 365 });
+	}
+	
+	
+	$("div.pageNav h2 a").click(function () {
+		$(this).parent().parent().toggleClass("on");
+		$(this).parent().parent().find('>ul').toggleClass("on");
+		$(this).parent().parent().find('>ol').toggleClass("on");
+		return false;
+	});
+	$(".nav .search").click(function () {
+		$("#searchBox").toggleClass("on");
+		return false;
+	});
+	
+	
+	$(".detailsSelect").click(function () {
+		$(this).toggleClass("off");
+		$("article article").toggleClass("off");
+
+
+		if($.cookie('detailsSelect') == 'off') {
+			$.cookie('detailsSelect', 'on', { expires: 365 });
+		}
+		else {
+			$.cookie('detailsSelect', 'off', { expires: 365 });
+		}
+		
+		return false;
+	});
+})
+</script> 
+</head>
+<body class="category" id="artworks">
+<header id="header">
+	<h1><a href="http://kame.s42.coreserver.jp/test/">Develo.org</a></h1>
+	<p class="description">CSS、XHTML、Movable Type、デザイン、絵を描いたり...。</p>
+	<nav>
+		<h1>Navigation</h1>
+		<p class="topicpath"><a href="http://develo.org/html5/" class="home">ホーム</a> &gt; <a href="http://develo.org/html5/xhtmlcss/" title="XHTML,CSS カテゴリー" class="xhtmlcss">XHTML,CSS</a> &gt; <em>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</em></p>
+	
+		<ul class="flip">
+			<li class="newer"><a href="http://develo.org/html5/2010/06/02/0148.html" title="さくらだよ。" rel="nofollow">次の記事へ</a></li>
+			<li class="older"><a href="http://develo.org/html5/2010/01/02/1746.html" title="あけましておめでとうございます" rel="nofollow">前の記事へ</a></li>
+		</ul>
+		<ul class="guide">
+			<li class="list"><a href="http://develo.org/html5/archives.html">色々一覧</a></li>
+			<li class="about"><a href="http://develo.org/html5/about.html">サイトについて</a></li>
+			<li class="profiles"><a href="http://develo.org/html5/profires.html">プロフィール</a></li>
+			<li class="bookmarks"><a href="http://develo.org/html5/bookmarks/">ブックマーク</a></li>
+			<li class="rss"><a href="http://feeds.feedburner.jp/develo">RSS</a></li>
+			<li class="search"><a href="#search">検索</a></li>
+			<li class="setup"><a href="#setup">設定</a></li>
+		</ul>
+
+		<form method="get" action="http://develo.org/mt/mt-search.cgi" id="searchBox">
+			<fieldset>
+			<legend><label for="search">Develo.org内の検索</label></legend>
+			<input type="hidden" name="IncludeBlogs" value="2" />
+			<input id="search-text" name="search" size="16" value="" />
+			<input type="submit" class="button search" value="検索" />
+			</fieldset>
+		</form>
+	</nav>
+</header>
+
+<div id="content">
+	<article>
+		<h1>Art Works</h1>
+		
+		<nav class="category">
+			<ul>
+				<li><a href="">HTML・CSS</a></li>
+				<li><a href="">Javascript</a></li>
+				<li><a href="">Art Works</a></li>
+				<li><a href="">Design</a></li>
+				<li><a href="">日記</a></li>
+			</ul>
+		</nav>
+		
+		
+		<p class="detailsSelect">記事の詳細 表示・非表示</p>
+
+		<article class="user1 javascript" id="entry75">
+			<header>
+				<h1><a href="http://develo.org/html5/2010/09/05/1301.html">jQueryでスムーズスクロールプラグイン</a></h1>
+				<ul class="data">
+					<li class="name">kamem</li>
+					<li class="date"><time pubdate="2010-09-05T13:01:54">2010&#24180;09&#26376;05&#26085; (日)</time></li>
+					<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a></li>
+					<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a> | <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=jQuery&amp;limit=20" title="2">jQuery</a></li>
+				</ul>
+			</header>
+
+			<div class="content">
+<p>スムーズにスルスルっとスクロールするJavascriptを使うときに「どれを使おう！？」っていつも迷うので、自分にあったものをjQueryのアニメーション機能を使って作ってみました！</p>
+				<p class="more"><a href="http://develo.org/html5/2010/09/05/1301.html#more" title="jQueryでスムーズスクロールプラグイン">続きを読む</a></p>
+			</div>
+
+				<ul class="reaction">
+					<li class="comment"><a href="http://develo.org/html5/2010/09/05/1301.html#comments" title="jQueryでスムーズスクロールプラグイン コメント">コメント : <span class="count count2">2</span></a></li>
+					<li class="trackback"><a href="http://develo.org/html5/2010/09/05/1301.html#trackbacks" title="jQueryでスムーズスクロールプラグイン トラックバック">トラックバック : <span class="count count0">0</span></a></li>
+				</ul>
+		</article>
+
+		<article class="user1 javascript" id="entry60">
+			<header>
+				<h1><a href="http://develo.org/html5/2009/06/28/0301.html">Shadowbox(3.0b)</a></h1>
+				<ul class="data">
+					<li class="name">kamem</li>
+					<li class="date"><time pubdate="2009-06-28T03:01:43">2009&#24180;06&#26376;28&#26085; (日)</time></li>
+					<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a></li>
+					<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a></li>
+				</ul>
+			</header>
+
+			<div class="content">
+			<p>最近、Lightboxで、Shadowboxがいいよーってことで、使ってみようかなぁ、と思ったのですが、設置するのに少し手間取ったので、手間取った部分をかいておこうかなぁ！と思います！今度設置するときに忘れないように！</p>
+				<p class="more"><a href="http://develo.org/html5/2009/06/28/0301.html#more" title="Shadowbox(3.0b)">続きを読む</a></p>
+			</div>
+
+				<ul class="reaction">
+					<li class="comment"><a href="http://develo.org/html5/2009/06/28/0301.html#comments" title="Shadowbox(3.0b) コメント">コメント : <span class="count count0">0</span></a></li>
+					<li class="trackback"><a href="http://develo.org/html5/2009/06/28/0301.html#trackbacks" title="Shadowbox(3.0b) トラックバック">トラックバック : <span class="count count0">0</span></a></li>
+				</ul>
+		</article>
+
+		<article class="user1 javascript xhtmlcss" id="entry59">
+			<header>
+				<h1><a href="http://develo.org/html5/2009/05/24/0135.html">タグの領域のクリックすると「高さ」と「幅」をはかってくれるjavascript</a></h1>
+				<ul class="data">
+					<li class="name">kamem</li>
+					<li class="date"><time pubdate="2009-05-24T01:35:22">2009&#24180;05&#26376;24&#26085; (日)</time></li>
+					<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a> | <a href="http://develo.org/html5/xhtmlcss/" title="20" class="htmlcss">XHTML,CSS</a></li>
+					<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a> | <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=jQuery&amp;limit=20" title="2">jQuery</a></li>
+				</ul>
+			</header>
+
+			<div class="content">
+			<p>な～んてものがあったら、CSSとかでサイト組むときなどに便利なんじゃないかなー、と前々から思っていたので、ちょっと作ってみました。</p>
+			<p>widthとpaddingとborderなどをつかったときに、IEとFirefoxで、幅がちがってきたりするので、なんか崩れてるけどなんでだろうーってときなんかに、ポチッとクリックしてみて、幅がブラウザによって、数ピクセル違った場合など、すぐに原因がわかるので便利かなーと思いました。</p>
+				<p class="more"><a href="http://develo.org/html5/2009/05/24/0135.html#more" title="タグの領域のクリックすると「高さ」と「幅」をはかってくれるjavascript">続きを読む</a></p>
+			</div>
+
+				<ul class="reaction">
+					<li class="comment"><a href="http://develo.org/html5/2009/05/24/0135.html#comments" title="タグの領域のクリックすると「高さ」と「幅」をはかってくれるjavascript コメント">コメント : <span class="count count1">1</span></a></li>
+					<li class="trackback"><a href="http://develo.org/html5/2009/05/24/0135.html#trackbacks" title="タグの領域のクリックすると「高さ」と「幅」をはかってくれるjavascript トラックバック">トラックバック : <span class="count count0">0</span></a></li>
+				</ul>
+		</article>
+	</article>
+
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+</div>
+
+<footer id="footer">
+	<nav class="topicpath">
+		<p><a href="http://develo.org/html5/" class="home">ホーム</a></p>
+	</nav>
+	<ul class="support">
+		<li id="powered">Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type 5.031</a></li>
+		<li id="template">Template by <a href="http://develo.org/">mtDevelo</a></li>
+	</ul>
+	<p class="copyright"><small>Copyright &copy; Develo.org All Rights Reserved.</small></p>
+</footer>
+</body>
+</html>

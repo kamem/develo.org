@@ -1,88 +1,473 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="stylesheet" href="css/import.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,target-densitydpi=device-dpi">
+
 <meta name="copyright" content="">
 <meta name="keywords" content="">   
 <meta name="description" content="">
-<script src="js/jquery.js"></script>
-<script src="js/common.js"></script>
-<title></title>
+<title>テキストテスト</title>
+
+<link rel="stylesheet" href="css/import.css">
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/import.js"></script> 
 </head>
 
 <body>
 <header id="header">
-	<h1>Sass Test</h1>
+	<h1><a href="http://develo.org/html5/">Develo.org</a></h1>
+	<p class="description">CSS、XHTML、Movable Type、デザイン、絵を描いたり...。</p>
+	<nav>
+		<h1>Navigation</h1>
+		<p class="topicpath"><a href="http://develo.org/html5/" class="home">ホーム</a> &gt; <a href="http://develo.org/html5/xhtmlcss/" title="XHTML,CSS カテゴリー" class="xhtmlcss">XHTML,CSS</a> &gt; <em>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</em></p>
+	
+		<ul class="flip">
+			<li class="newer"><a href="http://develo.org/html5/2010/06/02/0148.html" title="さくらだよ。" rel="nofollow">次の記事へ</a></li>
+			<li class="older"><a href="http://develo.org/html5/2010/01/02/1746.html" title="あけましておめでとうございます" rel="nofollow">前の記事へ</a></li>
+		</ul>
+		<ul class="guide">
+			<li class="list"><a href="http://develo.org/html5/archives.html">色々一覧</a></li>
+			<li class="about"><a href="http://develo.org/html5/about.html">サイトについて</a></li>
+			<li class="profiles"><a href="http://develo.org/html5/profires.html">プロフィール</a></li>
+			<li class="bookmarks"><a href="http://develo.org/html5/bookmarks/">ブックマーク</a></li>
+			<li class="rss"><a href="http://feeds.feedburner.jp/develo">RSS</a></li>
+			<li class="search"><a href="#search">検索</a></li>
+			<li class="setup"><a href="#setup">設定</a></li>
+		</ul>
+
+		<form method="get" action="http://develo.org/mt/mt-search.cgi" id="searchBox">
+			<fieldset>
+			<legend><label for="search">Develo.org内の検索</label></legend>
+			<input type="hidden" name="IncludeBlogs" value="2" />
+			<input id="search-text" name="search" size="16" value="" />
+			<input type="submit" class="button search" value="検索" />
+			</fieldset>
+		</form>
+	</nav>
 </header>
+
 
 <main role="main">
 	<article>
-		<h2>カスタム関数の使い方</h2>
-		
-		<section id="background-fit">
-			<h3>background-fit</h3>
-			<p>画像をフィットさせる</p>
-			<section>
-				<h4>retina</h4>
-				<p>画像をフィットさせる</p>
+
+		<header>
+			<h1>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</h1>
+			<ul class="data">
+				<li class="name">kamem</li>
+				<li class="date"><time pubdate="2010-09-05T13:01:54">2010&#24180;09&#26376;05&#26085; (日)</time></li>
+				<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a></li>
+				<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a> | <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=jQuery&amp;limit=20" title="2">jQuery</a></li>
+			</ul>
+			<!--
+			<ul class="service">
+				<li class="hatena"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+				<li class="facebook"><div class="fb-like" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true" data-font="segoe ui"></div><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></li>
+				<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+				<li class="google"><div class="g-plusone" data-size="medium" data-width="120"></div><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script></li>
+				<li class="grow"><script type="text/javascript" src="http://growbutton.com/javascripts/button.js?apikey=69a86a80-66a5-012f-0692-12313f00aced&shape=rectangle"></script></li>
+			</ul>-->
+		</header>
+
+<div class="content">
+<figure class="main"><img src="http://farm6.static.flickr.com/5057/5505783379_0d614b5be3_z.jpg" width="640" height="480" alt="" /></figure>
+
+<nav class="pageNav" id="pageNav">
+<h2><a href="#pageNav">目次</a></h2>
+<ol>
+	<li><a href="#start">Evernoteについて（かきだし）</a>
+		<ol>
+			<li><a href="#start">Evernoteについて（かきだし）</a></li>
+			<li><a href="#public">共有</a></li>
+			<li><a href="#category">カテゴリー</a></li>
+		</ol>
+	</li>
+	<li><a href="#public">共有</a>
+		<ul>
+			<li><a href="#start">Evernoteについて（かきだし）</a></li>
+			<li><a href="#public">共有</a></li>
+			<li><a href="#category">カテゴリー</a></li>
+		</ul>
+	</li>
+	<li><a href="#category">カテゴリー</a></li>
+</ol>
+</nav>
+<p id="start">最近はやりの<a href="http://evernote.com/">Evernote</a>なのですが、最近いろいろな用途で使わせていただいています。</p>
+
+
+<nav class="pageNav on">
+<h2><a href="aaa">目次</a></h2>
+<ul class="on">
+	<li><a href="#start">Evernoteについて（かきだし）</a></li>
+	<li><a href="#public">共有</a></li>
+	<li><a href="#category">カテゴリー</a></li>
+</ul>
+</nav>
+
+<pre  class="prettyprint lang-css">
+header {
+	margin: 10px;
+}
+
+header h1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+header a {
+	display: block;
+}
+</pre>
+
+<pre  class="prettyprint lang-js">
+$(function(){
+	prettyPrint();
+	
+	$("div.pageNav h2 a").click(function () {
+		$("div.pageNav").toggleClass("on");
+		$("div.pageNav ol").toggleClass("on");
+		return false;
+	});
+})
+</pre>
+
+<pre  class="prettyprint lang-html">
+&lt;div class=&quot;section pageNav&quot;&gt;
+&lt;h2&gt;&lt;a href=&quot;aaa&quot;&gt;目次&lt;/a&gt;&lt;/h2&gt;
+</pre>
+
+<ol>
+	<li>Test</li>
+	<li>Test2</li>
+</ol>
+<p>Test</p>
+<ol start="3">
+	<li>Test3</li>
+</ol>
+
+<p>知らない人もいると思うので、どういうものなのか少しだけ説明！</p>
+<figure class="img_R"><img src="http://farm6.static.flickr.com/5053/5505894657_9db02c30a4_z.jpg" width="320" alt=""></figure>
+<p><a href="http://evernote.com/">Evernote</a>をいろいろな<em class="num1">パソコン</em>や、<em>スマートフォン</em>などに入れておき<em>「自分のアカウント」でログイン</em>すると、そのアカウント内で「文書・写真・ファイル」を共有できるものです。<br>
+
+ネットに繋いでいれば自動的に同期をとってくれるので、どこでも最新のファイルが見られます。ネットに繋いでいれば自動的に同期をとってくれるので、どこでも最新のファイルが見られます。</p>
+<p>ネットを繋いでいなくてもファイルは見られるのでそれがまた便利なのです！</p>
+
+<p>いろんなサイトを見てる時や、散歩中に見つけたポスターや広告で、<em>「綺麗だなぁー。」</em><em>「かわいいなぁー。」</em><em>「上手だなぁー。」</em>というものがあったら、</p>
+
+<ul>
+<li>Webサイトを保存するときは、
+ページ全体をキャプチャできるFirefoxアドオンの<a href="http://pearlcrescent.com/products/pagesaver/">Pearl Crescent Page Saver</a>を使ったり</li>
+
+<li>外でなにか見つけたときはiPhoneで写真とったり</li>
+</ul>
+<p>なるべくEvernoteに保存しておくようにしています！</p>
+
+<p class="arrow-alt down">なるべくEvernoteに保存しておくようにしています！なるべくEvernoteに保存しておくようにしています！悩んだり、困ったときなどに<a href="#category">自分で分けたカテゴリー</a>ごとに探せるようにしておくと、そこからヒント得たりできるので便利です！</p>
+
+
+               <div id="more">
+<section id="public">
+<h2>共有</h2>
+
+<p>Evernoteではノートブックを共有できるので、
+「デザイン」ノートブックを共有設定にしてます！</p>
+
+<p>見たい方がいらっしゃいましたらどうぞー！</p>
+
+<ul class="links">
+<li><a href="https://www.evernote.com/pub/develo0/design/" target="_blank">Evernote 共有ノートブック:デザイン(develo0/design)</a></li>
+</ul>
+
+<p>また、親アカウントがプレミアム会員の場合、他の人でも
+<em>共有したノートブックの編集・削除</em>が行えるようになるみたいです。</p>
+
+<p>何人か集まって、みんなでデザインを集められたら「面白いかな！」とか思いました！<br>
+（もうやってる人達いるかな・・？）</p>
+
+<p>誰か「一緒に集めようー！」って方、「一緒にやりませんか？」って誘ってくれる方いないかなぁ・・。</p>
+
+<figure>
+<img src="http://farm6.static.flickr.com/5053/5505894657_9db02c30a4_z.jpg" width="640" height="480" alt="">
+<figcaption>こんな写真がありましたー。</figcaption>
+</figure>
+
+</section>
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+
+<section id="category">
+<h2>カテゴリー</h2>
+<dl class="table">
+<dt>色</dt>
+<dd>赤・青・オレンジ・茶色・黒...など 色ごとに区分け。</dd>
+
+<dt>Flash</dt>
+<dd>Flashが使われているサイト</dd>
+
+<dt>きれい</dt>
+<dd>&nbsp;</dd>
+
+<dt>イラスト</dt>
+<dd>イラストが使われている</dd>
+
+<dt>シンプル</dt>
+
+<dd>&nbsp;</dd>
+
+<dt>かわいい</dt>
+<dd>&nbsp;</dd>
+
+<dt>音</dt>
+<dd>音・BGMがあるサイト</dd>
+
+<dt>おもしろ</dt>
+<dd>「おもしろい！」って思ったもの</dd>
+
+<dt>紙</dt>
+
+<dd>紙のテイストが入っている</dd>
+
+<dt>アイコン</dt>
+<dd>アイコンを上手に使っている</dd>
+
+<dt>和風</dt>
+<dd>&nbsp;</dd>
+
+<dt>メニュー</dt>
+<dd>上手なメニュー</dd>
+
+<dt>3D</dt>
+<dd>3Dを使っている</dd>
+
+<dt>ロゴ・タイトル</dt>
+<dd>上手なロゴ・タイトル</dd>
+
+<dt>header</dt>
+<dd>headerがおもしろい・きれい</dd>
+
+<dt>HTMLアニメ</dt>
+
+<dd>HTMLでcss3とかJavascriptを使ってアニメーションをしているサイト</dd>
+
+<dt>ゲーム</dt>
+<dd>ゲーム・ゲーム関連のコンテンツ</dd>
+
+<dt>ランディング</dt>
+<dd>ランディングページサイト</dd>
+
+<dt>かっこいい</dt>
+<dd>&nbsp;</dd>
+
+<dt>バナー</dt>
+<dd>&nbsp;</dd>
+
+<dt>植物</dt>
+<dd>&nbsp;</dd>
+
+<dt>食べ物・飲み物</dt>
+<dd>食べ物・飲み物関連のコンテンツ</dd>
+
+<dt>人</dt>
+<dd>人を使ったデザイン</dd>
+
+<dt>動物</dt>
+<dd>動物を使ったデザイン</dd>
+
+<dt>動物筆記用具</dt>
+<dd>筆記用具を使ったデザイン</dd>
+
+<dt>写真</dt>
+<dd>写真を生かしたデザイン</dd>
+
+<dt>広い画面</dt>
+
+<dd>広い画面を使って上手な見せ方</dd>
+
+<dt>木</dt>
+<dd>木の素材を使っている</dd>
+
+<dt>本</dt>
+<dd>本テイストのデザイン</dd>
+
+<dt>グラフ</dt>
+<dd>綺麗なグラフ</dd>
+
+<dt>手描き</dt>
+<dd>&nbsp;</dd>
+
+<dt>EC</dt>
+<dd>ショッピングサイト</dd>
+
+<dt>アイディア</dt>
+<dd>アイディアがおもしろい</dd>
+
+<dt>キャラクター</dt>
+
+<dd>キャラクターを使っている</dd>
+
+<dt>スポーツ</dt>
+<dd>スポーツ系コンテンツ</dd>
+
+<dt>テキスト</dt>
+<dd>テキストの見せ方</dd>
+
+<dt>横長</dt>
+<dd>横長デザイン</dd>
+
+<dt>高級</dt>
+<dd>&nbsp;</dd>
+
+<dt>お店</dt>
+<dd>&nbsp;</dd>
+
+<dt>カメラ</dt>
+<dd>カメラを題材にしたもの</dd>
+
+<dt>グラデーション</dt>
+<dd>グラデーションがきれい</dd>
+
+<dt>コルクボード</dt>
+<dd>コルクボードを使っている</dd>
+
+<dt>スタンプ</dt>
+<dd>スタンプを使っている</dd>
+
+<dt>ビジネス</dt>
+<dd>&nbsp;</dd>
+
+<dt>封筒</dt>
+
+<dd>封筒を使っている</dd>
+
+<dt>建築</dt>
+<dd>&nbsp;</dd>
+
+<dt>手作り</dt>
+<dd>&nbsp;</dd>
+
+<dt>料理</dt>
+<dd>&nbsp;</dd>
+
+<dt>映像</dt>
+
+<dd>映像を使っている</dd>
+
+<dt>機械</dt>
+<dd>&nbsp;</dd>
+
+<dt>物語</dt>
+<dd>物語がある</dd>
+
+<dt>黒板</dt>
+<dd>黒板デザイン</dd>
+</dl>
+
+<p>その時の感じ方でタグを付けているので、あってないものがあるかもしれないです・・。</p>
+
+</section>
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+               </div>
+</div>
+
+		<footer>
+			<section id="comments">
+				<h2>コメント<span class="count">63</span></h2>
+				<form method="post" action="http://develo.org/mt/mt-comments.cgi" id="commentsForm" onsubmit="return mtCommentOnSubmit(this)">
+	<script language="JavaScript" type="text/javascript">
+	<!-- 
+	function keystrokes(form) {
+	    form.strokes.value = 1;
+	}
+	//-->
+	</script>
+	<input type="hidden" name="strokes" value="0" />
+	
+					<fieldset>
+					<legend>コメントフォーム</legend>
+					<input type="hidden" name="static" value="1" />
+					<input type="hidden" name="entry_id" value="2" />
+					<input type="hidden" name="__lang" value="ja" />
+					<dl class="form">
+						<dt class="name"><label for="comment-author">名前</label></dt>
+						<dd class="name"><input id="comment-author" name="author" size="30" value="" /></dd>
+						<dt class="mail"><label for="comment-email">メールアドレス</label></dt>
+						<dd class="mail"><input id="comment-email" name="email" size="30" value="" /></dd>
+						<dt class="url"><label for="comment-url"><abbr title="Uniform Resource Identifer">URI</abbr></label></dt>
+						<dd class="url"><input id="comment-url" name="url" size="30" value="" /></dd>
+						<dt class="info"><label for="comment-bake-cookie">情報を保存しますか？</label></dt>
+						<dd class="info"><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" onkeypress="mtRememberMeOnClick(this)" value="1" accesskey="r" /></dd>
+						<dt class="comment"><label for="comment-text">コメント <span>(スタイル指定用の一部の <abbr title="Hyper Text Markup Language">HTML</abbr>タグが使用できます。)</span></label></dt>
+						<dd class="comment"><textarea id="comment-text" name="text" rows="10" cols="50" onkeypress="keystrokes(this.form)"></textarea></dd>
+					</dl>
+					<p id="comments-open-footer"><input type="submit" class="button preview" id="comment-preview" name="preview" value="確認" /><input type="submit" class="button post" value="送信" onclick="keystrokes(this.form)" /></p>
+					</fieldset>
+					<script type="text/javascript">
+						<!--
+						mtAttachEvent("load", mtEntryOnLoad);
+						mtAttachEvent("unload", mtEntryOnUnload);
+						//-->
+					</script>
+				</form>
+				<dl class="log">
+					<dt id="comment60290">瀬戸 : <span class="date">2011&#24180;07&#26376;29&#26085; (金) 19:53</span></dt>
+					<dd>
+					<p>よろしく</p>
+					</dd>
+					<dt id="comment73513">jquery lover : <span class="date">2011&#24180;10&#26376;17&#26085; (月) 16:31</span></dt>
+					<dd>
+					<p>ぜんぜん使えませんでしたけど。。</p>
+					</dd>
+					<dt id="comment73514">kamem : <span class="date">2011&#24180;10&#26376;18&#26085; (火) 18:28</span></dt>
+					<dd>
+					<p>ごめんなさい m(_ _ )m<br />
+	時間があれば、もっといろんな動きを追加していきたいとおもってます！</p>
+					</dd>
+					<dt id="comment73518">loveThisCode : <span class="date">2012&#24180;01&#26376;26&#26085; (木) 19:11</span></dt>
+					<dd>
+					<p>こんばんは。<br />
+	ありがたく使用させていただいています！</p>
+	
+	<p>1点だけお伺いしたいのですが、<br />
+	複数ページにティッカーを表示させてて、ページ遷移してると<br />
+	時々ティッカーが流れないときがあります・・・<br />
+	使用している動きはmove１です。<br />
+	対策ってありますでしょうか？</p>
+					</dd>
+					<dt id="comment73519">kamem : <span class="date">2012&#24180;01&#26376;28&#26085; (土) 14:25</span></dt>
+					<dd>
+					<p>> loveThisCodeさん</p>
+	
+	<p>同じページに複数のティッカーを埋め込んでいるということでしょうか？</p>
+	
+	<p>んー、原因はすぐにはわからないです・・。<br />
+	もし解決できましたら、修正しますね。</p>
+					</dd>
+				</dl>
+	
 			</section>
-		</section>
-
-		<section id="background-4corners">
-			<h3>background-4corners</h3>
-			<p></p>
-		</section>
-		
-		<section id="em-width">
-			<h3>em-width</h3>
-			<p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
-		</section>
-		
-		<section id="sprite-info">
-			<h3>sprite-info</h3>
-			<p>3</p>
-			<ol>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-			</ol>
-		</section>
-
-		<section id="triangle">
-			<h3>triangle,triangle-set</h3>
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-			<p>吹き出しみたいな感じにできる</p>
-		</section>
-
-		<section id="arrow">
-			<h3>triangle,triangle-set</h3>
-			<ul>
-				<li>menu1</li>
-				<li>menu2</li>
-				<li>menu3</li>
-				<li>menu4</li>
-			</ul>
-		</section>
-
-		<section id="shadow-repeat">
-			<h3>text-shadow-repeat,box-shadow-repaet</h3>
-			<p>おはこんばんちは</p>
-		</section>
+	
+			<section id="trackbacks">
+				<h2>トラックバック<span class="count">13</span></h2>
+				<p class="url">http://develo.org/mt/mt-tb.cgi/2</p>
+				<dl class="log">
+					<dt id="ping-1"><a href="http://hal-lab.cocolog-nifty.com/blog/2010/04/dldtdd3px-2ae2.html">dl,dt,ddの擬似テーブルで3pxのずれを直す方法</a> : <span class="date">2010年4月20日 09:44</span></dt>
+					<dd>dtとddを横並びの擬似テーブルにする場合、IE6だと3pxのずれが生じます。そ</dd>
+				</dl>
+			</section>
+		</footer>
 	</article>
+
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+
 </main>
 
 <footer id="footer">
-	<p><small>Copyright &copy; Develo.org All Rights Reserved.</small></p>
+	<p class="topicpath"><a href="http://develo.org/" class="home">ホーム</a></p>
+	<ul class="support">
+		<li id="powered">Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type 5.01</a></li>
+		<li id="template">Template by <a href="http://develo.org/">mtDevelo</a></li>
+	</ul>
+	<p class="copyright"><small>Copyright &copy; Develo.org All Rights Reserved.</small></p>
 </footer>
 </body>
 </html>

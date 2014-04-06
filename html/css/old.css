@@ -1,0 +1,92 @@
+@charset "utf-8";
+#header,
+main,
+#footer {
+  text-align: left;
+}
+@media screen and (max-width: 479px) {
+  #header,
+  main,
+  #footer {
+    width: 320px;
+  }
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+/*----------------------------------------
+	content
+----------------------------------------*/
+.content img {
+  width: 736px;
+}
+.content figure,
+.content p,
+.content li,
+.content dt,
+.content dd {
+  line-height: 23px;
+  letter-spacing: 2.4px;
+}
+.content dl,
+.content ul,
+.content ol {
+  margin: 39px 0;
+}
+.content li {
+  margin-bottom: 23px;
+}
+.content figure,
+.content p {
+  margin-bottom: 23px;
+}
+.content figcaption {
+  margin-top: 19px;
+}
+.content section {
+  padding: 19px 0;
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer p {
+  padding: 0.5em;
+}
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+.main {
+  margin: 0 auto 3.8rem auto !important;
+  max-width: 79.8rem !important;
+  max-height: 33rem !important;
+  overflow: hidden;
+}
+.main img {
+  width: 79.8rem;
+}
+
+img.noResize,
+.noResize img,
+table img {
+  width: inherit !important;
+  height: inherit !important;
+}
+
+.noResize {
+  text-align: center;
+}
+
+.clearfix {
+  min-height: 1px;
+  _height: 1%;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}

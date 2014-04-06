@@ -6,7 +6,7 @@ module Develo
 		Sass::Script::String.new(FileTest.exist?(path).to_s)
     end
 
-	def fileList(dir,isDir = true)
+	def fileList(dir,isDir = true,extname = false)
 		array = []
 		dirs = Dir.glob(dir.value)
 		dirs.each_with_index do |li,i|
@@ -14,7 +14,11 @@ module Develo
 			if isDir == true then
 				file = li
 			else
-				file = File.basename(li)
+				if extname == false
+					file = File.basename(li)
+				else 
+					file = File.basename(li,extname.value.to_s)
+				end
 			end
 			
 			array[i] = Sass::Script::String.new("#{file}")

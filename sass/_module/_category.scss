@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/*----------------------------------------
+	category
+----------------------------------------*/
+.categories {
+	$font-size: 16;
+	padding: fs(5) 0;
+	margin: 0 auto;
+	font-size: fz($font-size);
+	max-width: fs($base-width-big,16);
+	background: #eee;
+	
+	h1 {
+		display: none;
+	}
+	
+	@include border-radius(4px);
+
+	li{
+		float: left;
+		width: 20%;
+		line-height: fs(60);
+		
+		#{"/"}width: 19.9%;
+
+		&:first-child a {
+			@include border-radius(4px 0 0 4px);
+		}
+		
+		&:last-child a {
+			@include border-radius(0 4px 4px 0);
+		}
+		
+		a {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			position: relative;
+			border-bottom: 5px solid #fff;
+
+			@include background(inline-image('common/white.gif') repeat-y left top,linear-gradient(top, #fcfcfc 0%, #f4f4f4 60%, #ededed 60%, #fcfcfc 100%));
+			#{"/"}background: #fff;
+			background/*\**/: #fff \9;
+			#{"/"}height: 1%;
+			
+			&:hover {
+				@include opacity(0.6);
+			}
+			&:active {
+				top: 1px;
+				left: 1px;
+				@include transition(none !important);
+			}
+		}
+		
+		$i: 0;
+		$border-color: #87d2f1,#e08181,#f6df82,#f8afda,#a7e492;
+		@each $category in $categories {
+			$i: $i + 1;
+			#{"&:nth-child(" +$i + ") a"} {
+				color: nth($category-colors,$i);
+				border-color: nth($border-color,$i);
+			}
+		}
+	}
+
+@media screen and (max-width: 47.25em) {
+	li{
+		width: 50%;
+	
+		&:nth-child(1) {
+			width: 100%;
+		}
+	}
+}
+}

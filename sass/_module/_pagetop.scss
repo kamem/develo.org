@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/*----------------------------------------
+	pagetop
+----------------------------------------*/
+p.pagetop {
+	$font-size: 13;
+	$line-height: silver-ratio($font-size) + $font-size;
+	$triangle-size: 10;
+
+	line-height: fs($line-height);
+	padding: 0 1.5em;
+	@include fz($font-size);
+	text-align: right;
+	letter-spacing: 0;
+	
+	a {
+		&[href^="#"] {
+			position: relative;
+			padding-right: fs($triangle-size + 5);
+
+			&:after {
+				@include triangle(fs($triangle-size) fs(8),$linkColor,top);
+				position: absolute !important;
+				top: $size / -2 !important;
+				right: 0 !important;
+			}
+			&:hover {
+				&:after {
+					border-bottom-color: $linkColor_hover;
+				}
+			}
+		}
+	}
+	
+	&:last-child {
+		background: rgba(#fff,0.45);
+	}
+	
+	.content & {
+		margin: 0 auto;
+		height: 0;
+		line-height: fs($line-height);
+		max-width: fs($base-width);
+		position: relative;
+		top: fs(-$line-height);
+	}
+}

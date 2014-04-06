@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,target-densitydpi=device-dpi">
+
+<meta name="copyright" content="">
+<meta name="keywords" content="">   
+<meta name="description" content="">
+<title>テキストテスト</title>
+
+<link rel="stylesheet" href="css/import.css">
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/smoothAnchor.js"></script> 
+<script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+<script>
+
+
+$(function(){
+	prettyPrint()
+	
+	
+	$("div.pageNav h2 a").click(function () {
+		$(this).parent().parent().toggleClass("on");
+		$(this).parent().parent().find('>ul').toggleClass("on");
+		$(this).parent().parent().find('>ol').toggleClass("on");
+		return false;
+	});
+	$(".nav .search").click(function () {
+		$("#searchBox").toggleClass("on");
+		return false;
+	});
+})
+</script> 
+</head>
+
+<body>
+<header id="header">
+	<h1><a href="http://kame.s42.coreserver.jp/test/">Develo.org</a></h1>
+	<p class="description">CSS、XHTML、Movable Type、デザイン、絵を描いたり...。</p>
+	<nav>
+		<h1>Navigation</h1>
+		<p class="topicpath"><a href="http://develo.org/html5/" class="home">ホーム</a> &gt; <a href="http://develo.org/html5/xhtmlcss/" title="XHTML,CSS カテゴリー" class="xhtmlcss">XHTML,CSS</a> &gt; <em>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</em></p>
+	
+		<ul class="flip">
+			<li class="newer"><a href="http://develo.org/html5/2010/06/02/0148.html" title="さくらだよ。" rel="nofollow">次の記事へ</a></li>
+			<li class="older"><a href="http://develo.org/html5/2010/01/02/1746.html" title="あけましておめでとうございます" rel="nofollow">前の記事へ</a></li>
+		</ul>
+		<ul class="guide">
+			<li class="list"><a href="http://develo.org/html5/archives.html">色々一覧</a></li>
+			<li class="about"><a href="http://develo.org/html5/about.html">サイトについて</a></li>
+			<li class="profiles"><a href="http://develo.org/html5/profires.html">プロフィール</a></li>
+			<li class="bookmarks"><a href="http://develo.org/html5/bookmarks/">ブックマーク</a></li>
+			<li class="rss"><a href="http://feeds.feedburner.jp/develo">RSS</a></li>
+			<li class="search"><a href="#search">検索</a></li>
+			<li class="setup"><a href="#setup">設定</a></li>
+		</ul>
+
+		<form method="get" action="http://develo.org/mt/mt-search.cgi" id="searchBox">
+			<fieldset>
+			<legend><label for="search">Develo.org内の検索</label></legend>
+			<input type="hidden" name="IncludeBlogs" value="2" />
+			<input id="search-text" name="search" size="16" value="" />
+			<input type="submit" class="button search" value="検索" />
+			</fieldset>
+		</form>
+	</nav>
+</header>
+
+
+<main>
+	<article>
+
+		<header>
+			<h1>Yahoo! UI Interface Library Font CSSを使うとIE8でFontが固定されるのを直す方法</h1>
+			<ul class="data">
+				<li class="name">kamem</li>
+				<li class="date"><time pubdate="2010-09-05T13:01:54">2010&#24180;09&#26376;05&#26085; (日)</time></li>
+				<li class="category">カテゴリー : <a href="http://develo.org/html5/javascript/" title="3" class="javascript">Javascript</a></li>
+				<li class="tag">タグ : <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=Javascript&amp;limit=20" title="3">Javascript</a> | <a href="http://develo.org/html5/mt/mt-search.cgi?blog_id=2&amp;tag=jQuery&amp;limit=20" title="2">jQuery</a></li>
+			</ul>
+		<!--	<ul class="service">
+				<li class="hatena"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+				<li class="facebook"><div class="fb-like" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true" data-font="segoe ui"></div><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script></li>
+				<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+				<li class="google"><div class="g-plusone" data-size="medium" data-width="120"></div><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script></li>
+				<li class="grow"><script type="text/javascript" src="http://growbutton.com/javascripts/button.js?apikey=69a86a80-66a5-012f-0692-12313f00aced&shape=rectangle"></script></li>
+			</ul>-->
+		</header>
+
+<div class="content">
+			<p>スマートフォンサイトを作る際に、<br />フリック操作を取り入れたものを作ることがあり、</p>
+			<p class="link"><a href="http://d.hatena.ne.jp/piglovesyou/20110123/1295786690">flickGal・・・iPhoneでフリックギャラリーを簡単に実装できるjQueryプラグインです - piglovesyouの日記</a></p>
+				 
+			<p>こちらのものを使わせていただいていました。</p>
+				 
+			<p>実際に使っているうちに、個人的にほしい機能などを追加したりしていたのですが、</p>
+				 
+			<p>毎回色々追加などしているうちにごちゃごちゃで分かりづらくなってきてしまったので、（piglovesyou様 すみません・・。）<br />
+自分で使いやすいように作り直してみました！</p>
+
+			<div id="more">
+
+				<p class="download"><a href="http://develo.org/file/flick.zip">flick.js ダウンロード</a></p>
+				
+				<ul class="download">
+					<li class="download"><a href="http://develo.org/file/flick.zip">flick.js ダウンロード</a></li>
+					<li class="github"><a href="http://develo.org/file/flick.zip">Github</a></li>
+				</ul>
+
+				<ul class="link">
+					<li><a href="http://develo.org/flick/">サンプル</a></li>
+					<li><a href="http://develo.org/flick/index2.html">サンプル（ウィンドウサイズにあわせてフリックコンテンツサイズを変更）</a></li>
+				</ul>
+
+				<section>
+					<h2>実装した機能</h2>
+					<ul>
+						<li>IEに対応（IE6〜）</li>
+						<li>フリックエリア クリック時、フリックした場合には「縦方向のスクロールストップ」。<br>普通に縦方向にスクロールした場合には「フリックの操作をストップ」する機能の追加。</li>
+						<li>フリックした時、フリックエリアの頭までスクロールする機能の追加。</li>
+						<li>初回の「フリックコンテンツの位置」を指定する機能を追加。</li>
+						<li>アドレスに「フリックコンテンツ位置のID（ハッシュ）」を指定することにで、そのコンテンツへ移動する機能を追加。</li>
+						<li>タイマーで時間が来ると次のコンテンツへ移動する機能を追加。</li>
+					</ul>
+				</section>
+ 
+				<section>
+					<h2>実際の使い方</h2>
+					<section>
+						<h3>HTML head</h3>
+						
+						<pre  class="prettyprint lang-html">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/smoothAnchor.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	$(&quot;#flick&quot;).flick();
+&lt;/script&gt;</pre>
+					</section>
+ 
+					<section>
+						<h3>HTML</h3>
+
+<pre  class="prettyprint lang-html">&lt;!-- 大枠で囲む --&gt;
+&lt;div id=&quot;flick&quot;&gt;
+
+	&lt;!-- ナビを「flickNav」クラスで囲む --&gt;
+	&lt;ul class=&quot;flickNav&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#content01&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#content02&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#content03&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;!-- フリックエリアを「container」クラスで囲む --&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;!-- itemを「itemBox」クラスで囲む --&gt;
+		&lt;div class=&quot;itemBox&quot;&gt;
+			&lt;div id=&quot;content01&quot; class=&quot;item&quot;&gt;
+				&lt;figure&gt;1&lt;/figure&gt;
+			&lt;/div&gt;
+			&lt;div id=&quot;content02&quot; class=&quot;item&quot;&gt;
+				&lt;figure&gt;2&lt;/figure&gt;
+			&lt;/div&gt;
+			&lt;div id=&quot;content03&quot; class=&quot;item&quot;&gt;
+				&lt;figure&gt;3&lt;/figure&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;!-- 
+	次へ進むには「next」クラス、前に戻るには「prev」クラスで囲う
+	ulのクラスはなんでもOKです。
+	--&gt;
+	&lt;ul class=&quot;next_prev&quot;&gt;
+		&lt;li class=&quot;next&quot;&gt;Next&lt;/li&gt;
+		&lt;li class=&quot;prev&quot;&gt;Prev&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+					</div>
+
+					<section>
+						<h3>必須なCSS</h3>
+<pre  class="prettyprint lang-css">div.container {
+     overflow: hidden;
+}
+div.itemBox {
+     position: relative;
+}
+div.container .item {
+     float: left;
+}
+<em id="moving">.moving {
+     -webkit-transition: -webkit-transform .2s ease-out;
+     -moz-transition: -moz-transform .2s ease-out;
+     -o-transition: -o-transform .2s ease-out;
+     -ms-transition: -ms-transform .2s ease-out;
+}</em></pre>
+					</section>
+
+					<section>
+						<h3>オプション</h3>
+						<pre  class="prettyprint lang-js">$("#flick").flick({
+     contentNum: 0,
+     centerPosition: true,
+     speed: 200,
+     timer: false
+});</pre>
+ 
+					<dl class="table">
+						<dt>contentNum</dt>
+						<dd>初回の「フリックコンテンツの位置」を指定。0から。<br />
+						デフォルトは「0」。</dd>
+						<dt>centerPosition</dt>
+						<dd>フリックした時、フリックエリアの頭までスクロールする機能を使用するか。<br />
+						デフォルトは「true」</dd>
+						<dt>speed</dt>
+						<dd>動きのスピード。<br />
+						デフォルトは200<br />
+						（transformが使えない場合のスピードです。使える場合は<a href="#moving">CSS側のスピード</a>になります。）</dd>
+						<dt>timer</dt>
+						<dd>タイマーで次のコンテンツへ移動の移動時間。（1秒の場合「1000」）。<br />
+						デフォルトは「false」（自動で回らないようになっています）。</dd>
+					</dl>
+					</section>
+				</section>
+ 
+ 				<section>
+					<h2>仕様の説明</h2>
+					<ul>
+						<li>セレクトされているflickNavのクラスは「selected」</li>
+						<li>「next」「prev」の次or前のコンテンツがない場合のクラスは「end」</li>
+					</ul>
+					<ul>
+						<li>IE6で使用する場合は、「container」に幅をいれるようにしてください。</li>
+					</ul>
+					<ul>
+						<li>PCサイトで使う場合で、コンテンツの中にimgが入ってる場合には、フリック時に画像をドラックしてしまいます。imgに「pointer-events: none;」 を入れるとドラックされないようになります。</li>
+					</ul>
+				</section>
+
+				<p class="download"><a href="http://develo.org/file/flick.zip">flick.js ダウンロード</a></p>
+				<p>そろそろコードは、githubで公開していくようにしたほうがいいですね・・。</p>
+
+			</section>
+
+</div>
+
+		<section id="comments">
+			<h2>コメント<span class="count">63</span></h2>
+			<form method="post" action="http://develo.org/mt/mt-comments.cgi" id="commentsForm" onsubmit="return mtCommentOnSubmit(this)">
+<script language="JavaScript" type="text/javascript">
+<!-- 
+function keystrokes(form) {
+    form.strokes.value = 1;
+}
+//-->
+</script>
+<input type="hidden" name="strokes" value="0" />
+
+				<fieldset>
+				<legend>コメントフォーム</legend>
+				<input type="hidden" name="static" value="1" />
+				<input type="hidden" name="entry_id" value="2" />
+				<input type="hidden" name="__lang" value="ja" />
+				<dl class="form">
+					<dt class="name"><label for="comment-author">名前</label></dt>
+					<dd class="name"><input id="comment-author" name="author" size="30" value="" /></dd>
+					<dt class="mail"><label for="comment-email">メールアドレス</label></dt>
+					<dd class="mail"><input id="comment-email" name="email" size="30" value="" /></dd>
+					<dt class="url"><label for="comment-url"><abbr title="Uniform Resource Identifer">URI</abbr></label></dt>
+					<dd class="url"><input id="comment-url" name="url" size="30" value="" /></dd>
+					<dt class="info"><label for="comment-bake-cookie">情報を保存しますか？</label></dt>
+					<dd class="info"><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" onkeypress="mtRememberMeOnClick(this)" value="1" accesskey="r" /></dd>
+					<dt class="comment"><label for="comment-text">コメント <span>(スタイル指定用の一部の <abbr title="Hyper Text Markup Language">HTML</abbr>タグが使用できます。)</span></label></dt>
+					<dd class="comment"><textarea id="comment-text" name="text" rows="10" cols="50" onkeypress="keystrokes(this.form)"></textarea></dd>
+				</dl>
+				<p id="comments-open-footer"><input type="submit" class="button preview" id="comment-preview" name="preview" value="確認" /><input type="submit" class="button post" value="送信" onclick="keystrokes(this.form)" /></p>
+				</fieldset>
+				<script type="text/javascript">
+					<!--
+					mtAttachEvent("load", mtEntryOnLoad);
+					mtAttachEvent("unload", mtEntryOnUnload);
+					//-->
+				</script>
+			</form>
+			<dl class="log">
+				<dt id="comment60290">瀬戸 : <span class="date">2011&#24180;07&#26376;29&#26085; (金) 19:53</span></dt>
+				<dd>
+				<p>よろしく</p>
+				</dd>
+				<dt id="comment73513">jquery lover : <span class="date">2011&#24180;10&#26376;17&#26085; (月) 16:31</span></dt>
+				<dd>
+				<p>ぜんぜん使えませんでしたけど。。</p>
+				</dd>
+				<dt id="comment73514">kamem : <span class="date">2011&#24180;10&#26376;18&#26085; (火) 18:28</span></dt>
+				<dd>
+				<p>ごめんなさい m(_ _ )m<br />
+時間があれば、もっといろんな動きを追加していきたいとおもってます！</p>
+				</dd>
+				<dt id="comment73518">loveThisCode : <span class="date">2012&#24180;01&#26376;26&#26085; (木) 19:11</span></dt>
+				<dd>
+				<p>こんばんは。<br />
+ありがたく使用させていただいています！</p>
+
+<p>1点だけお伺いしたいのですが、<br />
+複数ページにティッカーを表示させてて、ページ遷移してると<br />
+時々ティッカーが流れないときがあります・・・<br />
+使用している動きはmove１です。<br />
+対策ってありますでしょうか？</p>
+				</dd>
+				<dt id="comment73519">kamem : <span class="date">2012&#24180;01&#26376;28&#26085; (土) 14:25</span></dt>
+				<dd>
+				<p>> loveThisCodeさん</p>
+
+<p>同じページに複数のティッカーを埋め込んでいるということでしょうか？</p>
+
+<p>んー、原因はすぐにはわからないです・・。<br />
+もし解決できましたら、修正しますね。</p>
+				</dd>
+			</dl>
+
+		</section>
+
+		<section id="trackbacks">
+			<h2>トラックバック<span class="count">13</span></h2>
+			<p class="url">http://develo.org/mt/mt-tb.cgi/2</p>
+			<dl class="log">
+				<dt id="ping-1"><a href="http://hal-lab.cocolog-nifty.com/blog/2010/04/dldtdd3px-2ae2.html">dl,dt,ddの擬似テーブルで3pxのずれを直す方法</a> : <span class="date">2010年4月20日 09:44</span></dt>
+				<dd>dtとddを横並びの擬似テーブルにする場合、IE6だと3pxのずれが生じます。そ</dd>
+			</dl>
+		</section>
+	</article>
+
+	<p class="pagetop"><a href="#header">このページの先頭へ戻る</a></p>
+
+</main>
+
+<footer id="footer">
+	<p class="topicpath"><a href="http://develo.org/" class="home">ホーム</a></p>
+	<ul class="support">
+		<li id="powered">Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type 5.01</a></li>
+		<li id="template">Template by <a href="http://develo.org/">mtDevelo</a></li>
+	</ul>
+	<p class="copyright"><small>Copyright &copy; Develo.org All Rights Reserved.</small></p>
+</footer>
+</body>
+</html>

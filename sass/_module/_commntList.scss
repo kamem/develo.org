@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/*----------------------------------------
+	commentList
+----------------------------------------*/
+dl.commentList {
+	$font-size: 16;
+	margin: fs(silver-ratio($font-size) + $font-size) 0 0 0;
+	padding-bottom: fs(19);
+	
+	dt {
+		margin: 0 auto;
+		padding-top: fs(19);
+		margin-top: fs(19);
+		border-top: 1px solid #dcc;
+		letter-spacing: 0.15em;
+		max-width: fs(736);
+		color: #500;
+		line-height: 1.375;
+		list-style-type: none;
+
+		#{"/"}width: 36.5em;
+	}
+	
+	dd {
+		margin: 0 auto;
+		padding-left: fs(13 + 10 + 18);
+		letter-spacing: 0.15em;
+		max-width: fs(718 - (13 + 10));
+		color: #500;
+		line-height:  fs(22);
+		list-style-type: none;
+
+		#{"/"}width: 36.5em;
+		
+		&:last-child {
+			padding-bottom: fs(19);
+			border-bottom: 1px solid #dcc;
+		}
+	}
+}

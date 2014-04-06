@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+@import "_extension_import";
+
+pre {
+	$font-size: 16;
+	$line-height: silver-ratio($font-size);
+	$boder: 2;
+
+	border: $boder + px solid #fff;
+	margin: 0 auto fs(silver-ratio($font-size) + $font-size) auto;
+	padding: fs(8) fs(10);
+
+	line-height: fs($line-height);
+	@include fz($font-size);
+	max-width: fs($base-width);
+
+	position: relative;
+	clear: both;
+	overflow: auto;
+
+	background: rgba(255,255,255,0.5);
+	#{"/"}background: #fff;
+	background/*\**/: #fff \9;
+
+	@include box-shadow(0 0 10px rgba(0,0,0,0.1));
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	&[class*="lang"]:after {
+		padding: 0.5em;
+		display: block;
+		background: #fff;
+		@include fz(12);
+		position: absolute;
+		right: 0;
+		top: 0;
+		line-height: 1;
+		@include border-radius(2px 2px 0 0);
+	}
+
+	$type: css js html;
+	$typeStr: "CSS","Javascript","HTML";
+	$typeborderColor: $cssColor,$jsColor,$htmlColor;
+	$typeColor: #f0f #900 #00f;
+	$i: 0;
+	@each $name in $type {
+		$i: $i + 1;
+		&[class*="lang-#{$name}"] {
+			border-color: nth($typeborderColor,$i);
+			&:after {
+				content: nth($typeStr,$i);
+				color: nth($typeColor,$i);
+			}
+		}
+	}
+}
+
+em {
+	font-style: normal;
+	font-weight: bold;
+	color: #500;
+}
+
+form {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset,
+legend {
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+input,
+textarea {
+	$font-size: 16;
+	padding: fs(8) fs(10);
+	border: 2px solid #fff;
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	outline: none;
+	-webkit-appearance: none;
+
+	@include fz($font-size);
+	@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
+	@include border-radius(6px);
+	@include box-sizing(border-box);
+}
+
+input {
+	&.button {
+		color: #fff;
+		background: $linkColor !important;
+		cursor: pointer;
+		border: none !important;
+		@include border-radius(4px !important);
+		
+	
+		&:hover {
+			position: relative;
+			@include opacity(0.6);
+			@include transition(0.13s ease-in-out);
+		}
+		
+		&:active {
+			top: 1px;
+			left: 1px;
+			@include box-shadow(none);
+			@include transition(none !important);
+		}
+	}
+	
+	&[type="checkbox"] {
+		padding: 0;
+		border: none;
+		background: transparent;
+		outline: none;
+		-webkit-appearance: checkbox;
+	}
+}
+
+input:hover,
+textarea:hover {
+}
+
+input:focus,
+textarea:focus {
+	border: fs(2) solid $linkColor;
+	background-color: #fff;
+}
+
+hr {
+	display: block;
+	border: none;
+	height: 22px;
+	background: inline-image("common/section.png") no-repeat center top;
+	@include fz($font-size);
+	margin-bottom: fs(silver-ratio($font-size) + $font-size);
+}

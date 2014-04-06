@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*----------------------------------------
+	detailsSelect
+----------------------------------------*/
+p.detailsSelect {
+	clear: both;
+	$font-size: 13;
+	max-width: fs($base-width-big);
+	padding-top: fs(silver-ratio($font-size));
+	margin: 0 auto;
+	text-align: right;
+	color: #744 !important;
+	@include fz($font-size);
+
+	a:before {
+		padding-right: 0.5em;
+		content: "×";
+		tex-decoration: none;
+	}
+
+	@media screen and (max-width: 51.125em) {
+			margin-left: fs(10);
+			margin-right: fs(10);
+	}
+
+	@media screen and (max-width: 30em) {
+			display: none;
+	}
+	
+	&.off {
+		a:before {
+			content: "▼" !important;
+		}
+	}
+}
