@@ -175,7 +175,6 @@ body#index {
 		}
 	}
 	
-	
 	p.pagetop {
 		background: transparent !important;
 	}
@@ -391,8 +390,9 @@ section#trackbacks {
 }
 
 /*----------------------------------------
-	list
+	page
 ----------------------------------------*/
+body.page,
 body#list {
 	article {
 		h1 {

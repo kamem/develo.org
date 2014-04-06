@@ -250,12 +250,13 @@ main,
 #header form input {
   overflow: hidden;
   width: 5.8rem;
-  height: 1em;
+  height: 1.8rem;
   padding: 0.5rem 0;
   margin: 0.5rem 0.5rem 0.5rem 0;
-  font-size: 130%;
+  font-size: 13px;
+  font-size: 1.3rem;
   float: left;
-  border: none !important;
+  border: 1px solid #3399cc !important;
   line-height: 1em;
   -webkit-border-radius: 30px !important;
   -moz-border-radius: 30px !important;
@@ -292,17 +293,6 @@ main {
   background-color: #f7f3e8;
   position: relative;
   z-index: 1;
-}
-main header {
-  width: 100%;
-  height: inherit;
-  overflow: hidden;
-  background: none;
-  position: static;
-  font-size: 130%;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
 }
 main h1 {
   margin: 0 auto;
@@ -367,6 +357,9 @@ main h4 {
   max-width: 73.6rem;
 }
 
+.content {
+  padding: 1px 0;
+}
 .content img {
   margin: 0 auto;
   width: 73.6rem;

@@ -14,19 +14,18 @@
 "_module/_tags",
 "_module/_commntList";
 
-
 /*----------------------------------------
 	img
 ----------------------------------------*/
 .main {
-	$mainWidth: 798;
-	margin: 0 auto  fs(38) auto !important;
-	max-width: fs($mainWidth) !important;
-	max-height: fs(silver-ratio($mainWidth) - $mainWidth) !important;
+	$font-size: 16;
+	margin: 0 auto  fs(silver-ratio($font-size) + $font-size) auto !important;
+	max-width: fs($base-width-big) !important;
+	max-height: fs(silver-ratio($base-width-big) - $base-width-big) !important;
 	overflow: hidden;
 	
 	img {
-		width: fs($mainWidth);
+		width: fs($base-width-big);
 	}
 }
 

@@ -113,6 +113,7 @@
 		letter-spacing: fs($letter-spacing);
 		max-width: fs($base-width-big - $border * 2 - $margin * 2) !important;
 		display: block;
+		list-style-type: none;		list-style-position: outside;
 		background: none !important;
 		
 		a {
@@ -124,7 +125,7 @@
 			display: list-item;
 			list-style-type: decimal;
 			list-style-position: inside;
-			@include fz(16);
+			@include fz($font-size);
 		
 			@include transition(0.13s ease-in-out);
 			

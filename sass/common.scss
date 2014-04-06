@@ -84,7 +84,6 @@ main,
 		display: none;
 	}
 	
-	$fix-height: $font-size + $font-size;
 	.topicpath {
 		$font-size : 11;
 		margin: fs($font-size) auto 0 auto;
@@ -247,12 +246,12 @@ main,
 		input {
 			overflow: hidden;
 			width: fs(58);
-			height: 1em;
+			height: fs(silver-ratio($font-size));
 			padding: fs(5) 0;
 			margin: fs(5) fs(5) fs(5) 0;
-			font-size: fz(13);
+			@include fz($font-size);
 			float: left;
-			border: none !important;
+			border: 1px solid $linkColor !important;
 			line-height: 1em;
 			@include border-radius(30px !important);
 			@include box-sizing(content-box !important);
@@ -280,19 +279,6 @@ main {
 	background-color: #f7f3e8;
 	position: relative;
 	z-index: 1;
-	
-	header {
-		width: 100%;
-		height: inherit;
-		overflow: hidden;
-		background: none;
-		position: static;
-		
-		font:{
-			size: fz(13);
-		}
-		@include box-shadow(none);
-	}
 
 	h1 {
 		$font-size: 25;
@@ -393,6 +379,8 @@ main {
 	$line-height: silver-ratio($font-size);
 	$em-width: 40;
 	$letter-spacing: 2.4;
+	
+	padding: 1px 0;
 
 	img {
 		margin: 0 auto;

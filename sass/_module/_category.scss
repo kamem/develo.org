@@ -7,8 +7,8 @@
 	$font-size: 16;
 	padding: fs(5) 0;
 	margin: 0 auto;
-	font-size: fz($font-size);
-	max-width: fs($base-width-big,16);
+	font-size: fs($font-size);
+	max-width: fs($base-width-big);
 	background: #eee;
 	
 	h1 {
