@@ -33,19 +33,8 @@ body#index main article article h1 {
 body#index .categories {
   margin-top: 9.3rem;
 }
-@media screen and (max-width: 47.25em) {
+@media screen and (max-width: 30rem) {
   body#index #header .description {
-    padding: 2.2rem 0;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    top: 6.5rem;
-  }
-  body#index .categories {
-    margin-top: 7.2rem;
-  }
-}
-@media screen and (max-width: 30em) {
-  body#index #header h2 {
     display: none;
   }
   body#index .categories {
@@ -133,27 +122,14 @@ body#index article article.off .data {
     margin-right: 1rem !important;
   }
 }
-@media screen and (max-width: 47.25em) {
+@media screen and (max-width: 47.25rem) {
   body.search main article article h1,
   body.category main article article h1,
   body#index article article h1 {
     padding: 0.8rem 1rem;
   }
-  body.search main article article ul.data,
-  body.category main article article ul.data,
-  body#index article article ul.data {
-    padding: 0 1rem;
-  }
 }
-@media screen and (max-width: 30em) {
-  body.search main article article ul.data,
-  body.category main article article ul.data,
-  body#index article article ul.data {
-    padding: 0 1rem !important;
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-    margin-bottom: 2px;
-  }
+@media screen and (max-width: 30rem) {
   body.search main article article,
   body.category main article article,
   body#index article article {
@@ -276,12 +252,18 @@ dl.log dd p {
 dl.log dd:nth-of-type(even) {
   background: rgba(255, 255, 255, 0.5);
 }
+@media screen and (max-width: 47.25rem) {
+  dl.log dt,
+  dl.log dd {
+    padding: 1rem 1rem;
+  }
+}
 
 /*----------------------------------------
 	comments
 ----------------------------------------*/
 section#comments {
-  padding-bottom: 0.7rem;
+  padding-bottom: 2.3rem;
   border-top: 5px solid white;
   background: rgba(255, 255, 255, 0.45);
 }
@@ -332,15 +314,15 @@ section#comments dl.form dd:nth-of-type(1) {
   margin-top: 0;
   border-top: none;
 }
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 30rem) {
   section#comments dl.form dt {
-    margin-right: 0;
+    margin-right: 0 !important;
     border: none;
     width: auto;
   }
   section#comments dl.form dd {
     margin-left: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border: none;
     line-height: 2.2rem;
   }
@@ -371,6 +353,11 @@ section#trackbacks p.url {
   max-width: 73.6rem;
   font-size: 160%;
   color: #500;
+}
+@media screen and (max-width: 47.25rem) {
+  section#trackbacks p.url {
+    padding: 1rem 1rem;
+  }
 }
 
 /*----------------------------------------

@@ -58,9 +58,59 @@
 			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
 		}
 	}
+@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+	margin-left: fs(10);
+	margin-right: fs(10);
+}
 
-@media screen and (max-width: 51.125em) {
-	margin-left: fs(10,16);
-	margin-right: fs(10,16);
+@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+	margin: 0;
+	padding: fs(silver-ratio($font-size)) 0;
+	display: block;
+	background: rgba(#fff,0.8);
+	border: 1px solid #fff;
+	position: relative;
+	color: $linkColor;
+
+	@include arrow-set(10px,2px, $linkColor,'right');
+	
+	&:after {
+		left: 10px;
+	}
+
+	&:before {
+		content: "タグの一覧を見る";	
+		display: block;
+		text-align: center;
+	}
+		
+	&.on {
+		padding: 0;
+		position: fixed;
+		background: rgba(#000,0.5);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		z-index: 5;
+		
+		&:after,
+		&:before {
+			display: none;
+		}
+		
+		ul {
+			margin: fs(10);
+		}
+		
+		li {
+			display: inline-block;
+		}
+	}
+
+	li {
+		display: none;
+	}
 }
 }

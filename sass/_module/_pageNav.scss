@@ -160,29 +160,28 @@
 			}
 		}
 	}
-	
-	
-@media screen and (max-width: 49.875em) {
+
+@media screen and (max-width: fs($mediaQuery-large,rem,16)) {
 	li {
-		margin: 0 fs(2,16) !important;
-		margin-bottom: fs(2,16) !important;
+		margin: 0 fs(2) !important;
+		margin-bottom: fs(2) !important;
 
 		li {
 			margin: 0 !important;			
-			margin-bottom: fs(2,16) !important;
+			margin-bottom: fs(2) !important;
 		}
 	}
 }
 
-@media screen and (max-width: 47.25em) {
+@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
 	li {
 		a {
-			padding: 0 fs(10,16) !important;
+			padding: fs($padding) fs(10);
 		}
 		
 		li {
 			a {
-				padding: 0 fs(26,16) !important;
+				padding: 0 fs(10 * 2) !important;
 			}
 		}
 	}

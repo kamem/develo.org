@@ -105,19 +105,11 @@ body#index {
 		padding: fs($padding) fs($font-size);
 		@include fz($font-size);
 		line-height: fs($line-height);
-		margin: 0;
-		width: 100%;
-		display: block;
-		text-align: center;
 		
-		position: absolute;
 		top: fs($header-height);
-		color: rgba($linkColor,0.4);
 			
 		#{"/"}color: $linkColor;
 		color/*\**/: $linkColor \9;
-
-		@include text-shadow-repeat(0 0 3px rgba(#fff,1),5);
 	}
 	
 	main {
@@ -221,8 +213,8 @@ body#index {
 		
 		@media screen and (max-width: 51.125em) {
 			h1 {
-				margin-left: fs(10,20) !important;
-				margin-right: fs(10,20) !important;
+				margin-left: fs(10) !important;
+				margin-right: fs(10) !important;
 			}
 			
 			ul.data {
@@ -560,6 +552,9 @@ body#list {
 	
 	form {
 		$font-size : 13;
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size) / 2;
+		$margin: 5;
 
 		max-width: fs($base-width-big);
 		@include fz($font-size);
@@ -572,22 +567,25 @@ body#list {
 			display/*\**/: block \9;
 		}
 		input {
-			width: fs(58);
-			height: 1em;
-			padding: fs(5) 0;
-			margin: fs(5) fs(5) fs(5) 0;
-			font-size: fz(13);
-			float: left;
-			border: none !important;
-			line-height: 1em;
-			@include border-radius(30px !important);
-			@include box-sizing(content-box !important);
+			$width: 58;
+			$border: 1;
+		
+			width: fs($width);
+			line-height: fs($line-height);
+			@include fz($font-size);
+			border: $border +px solid $linkColor !important;
+
 			&#search-text {
-				padding: fs(5) fs(13);
-				padding-right: fs(58);
-				width: fs(202 - 13);
-				margin-right: fs(-58);
-				margin-left: fs(5);
+				margin: fs($margin);
+				padding: fs($padding);
+				padding-right: fs($width);
+				margin-right: fs(-$width + $border);
+				width: fs(202);
+			}
+			
+			&.button {
+				margin: fs($margin) fs($margin) 0 0;
+				padding: fs($padding) 0;
 			}
 		}
 	}

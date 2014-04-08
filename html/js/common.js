@@ -54,7 +54,18 @@ function scriptCreate(name) {
 $(function(){
 	
 	prettyPrint();
-	
+
+	//カテゴリー
+	var $onOff = $('.categories,.tags');
+	$onOff.extraTouch(function(e) {
+		var $this = $(e.currentTarget),
+			href = $(e.target)[0].href;
+		if(href !== undefined) {
+			location.href = href;
+		} else {
+			$this.toggleClass('on');
+		}
+	});
 	
 	$(".guide .search a").unbind();
 	$(".guide .search a").click(function () {

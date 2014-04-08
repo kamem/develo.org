@@ -53,22 +53,8 @@ body#index {
 		margin-top: fs($fix-height - 1);
 	}
 
-
-	@media screen and (max-width: 47.25em) {
+	@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
 		#header .description {
-			padding: fs(22) 0;
-			font-size: fs(16);
-			line-height: fs(28);
-			top: fs(65);
-		}
-	
-		.categories {
-			margin-top: fs(72);
-		}
-	}
-
-	@media screen and (max-width: 30em) {
-		#header h2 {
 			display: none;
 		}
 	
@@ -137,36 +123,23 @@ body#index {
 		
 		@media screen and (max-width: 51.125em) {
 			h1 {
-				margin-left: fs(10,20) !important;
-				margin-right: fs(10,20) !important;
+				margin-left: fs(10) !important;
+				margin-right: fs(10) !important;
 			}
 			
 			ul.data {
-				margin-left: fs(10,13)  !important;
-				margin-right: fs(10,13)  !important;
+				margin-left: fs(10)  !important;
+				margin-right: fs(10)  !important;
 			}
 		}
 		
-		@media screen and (max-width: 47.25em) {
+		@media screen and (max-width:  fs($mediaQuery-middle,rem,16)) {
 			h1 {
-				padding: fs(8,20) fs(10,20);
-			}
-			
-			ul.data {
-				padding: 0 fs(10,13);
+				padding: fs(8) fs(10);
 			}
 		}
-		@media screen and (max-width: 30em) {
-			ul.data {
-				padding: 0 fs(10,11)  !important;
-				margin-left: fs(10,11)  !important;
-				margin-right: fs(10,11)  !important;
-				margin-bottom: 2px;
-			}
-
-			& {
-				padding-bottom: 0;
-			}
+		@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+			padding-bottom: 0;
 			
 			.content,
 			footer {
@@ -268,6 +241,14 @@ dl.log {
 			background: rgba(#fff,0.5);
 		}
 	}
+	
+	
+	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+		dt,
+		dd {
+			padding: fs(10) fs(10);
+		}
+	}
 }
 
 /*----------------------------------------
@@ -279,7 +260,7 @@ section#comments {
 	$line-height: silver-ratio($font-size);
 	$padding: silver-ratio($font-size) - $font-size;
 	$width:  $base-width - silver-ratio($base-width,true);
-	padding-bottom: fs($padding);
+	padding-bottom: fs($line-height);
 	border-top: $border + px solid #fff;
 	background: rgba(#fff,0.45);
 
@@ -339,18 +320,18 @@ section#comments {
 			}
 		}
 		
-		@media screen and (max-width: 30em) {
-		dt {
-			margin-right: 0;
-			border: none;
-			width: auto;
-		}
-		dd {
-			margin-left: 0;
-			margin-bottom: fs(10);
-			border: none;
-			line-height: fs(22);
-		}
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			dt {
+				margin-right: 0 !important;
+				border: none;
+				width: auto;
+			}
+			dd {
+				margin-left: 0;
+				margin-bottom: fs(5);
+				border: none;
+				line-height: fs(22);
+			}
 		}
 	}
 	
@@ -386,6 +367,9 @@ section#trackbacks {
 		max-width: fs($base-width);
 		font-size: fz($font-size);
 		color: #500;
+		@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+			padding: fs(10) fs(10);
+		}
 	}
 }
 

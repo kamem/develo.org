@@ -6,13 +6,6 @@
 main,
 #footer {
 	text-align: left;
-
-	@media screen and (max-width: 479px) {
-		width: 320px;
-	}
-
-	@media screen and (min-width: 480px) {
-	}
 }
 
 /*----------------------------------------
@@ -45,19 +38,18 @@ main,
 		position: relative;
 		z-index: 2;
 
+		$title-img: "common/title.png";
+		$title-width: image-width($title-img) / 1px;
+		$title-height: image-height($title-img) / 1px;
 		a {
-			$title-img: "common/title.png";
-			$title-width: image-width($title-img) / 1px;
-			$title-height: image-height($title-img) / 1px;
 			display: block;
 			overflow: hidden;
 			position: relative;
-			top: fs(($header-height - $title-height) / 2);
 			left: fs(($base-width-big - $base-width) / 2);
-			background: image-url($title-img) no-repeat left top;
-			background: inline-image($title-img) no-repeat left top;
+			background: image-url($title-img) no-repeat left center;
+			background: inline-image($title-img) no-repeat left center;
 			padding-top: fs($title-height);
-			width: fs($title-width);
+			max-width: fs($title-width);
 			height: 0;
 			background-size: contain;
 			@include transition(0.13s ease-in-out);
@@ -67,15 +59,16 @@ main,
 			}
 		}
 
-		@media screen and (max-width: 47.25em) {
+		@media screen and (max-width:  fs($mediaQuery-middle,rem,16)) {
 			a {
 				left: fs(10);
 			}
 		}
-		@media screen and (max-width: 30em) {
+		@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
 			a {
-				margin: 0 auto;
-				left: 0;
+				width: auto;
+				background-size: 100%;
+				margin-right: fs(215);
 			}
 		}
 	}
@@ -111,7 +104,7 @@ main,
 			}
 		}
 		
-	@media screen and (max-width: 47.25em) {
+	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
 		padding: 0 fs(10);
 	}
 	}
@@ -172,11 +165,16 @@ main,
 			}
 		}
 		
-		@media screen and (max-width: 49.875em) {
+		@media screen and (max-width: fs($mediaQuery-large,rem,16)) {
 			li {
-				margin-right: fs(5);
+				margin-right: fs(10);
 				top: fs(15);
 				right: fs(7.5);
+				
+				&.rss {
+					display: none;	
+				}
+				
 				a {
 					width: fs(34);
 					padding-top: fs(34);
@@ -189,34 +187,15 @@ main,
 		}
 	}
 	
-	
-	@media screen and (max-width: 30em) {
-		height: inherit;
-		.guide {
-			height: fs(44);
-			margin: 0 auto;
-			text-align: center;
-			li {
-				padding: fs(5) 0;
-				top: 0;
-				right: 0;
-			}
-		}
-		
-		.topicpath {
-			$font-size : 11;
-			margin-top: 0;
-			height: 0;
-			top: fs(44 +11);
-		}
-	}
-	
 	.description {
 		display: none;
 	}
 	
 	form {
 		$font-size : 13;
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size) / 2;
+		$margin: 5;
 
 		margin: 0 auto;
 		max-width: fs($base-width-big);
@@ -244,26 +223,29 @@ main,
 			@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 		}
 		input {
-			overflow: hidden;
-			width: fs(58);
-			height: fs(silver-ratio($font-size));
-			padding: fs(5) 0;
-			margin: fs(5) fs(5) fs(5) 0;
+			$width: 58;
+			$border: 1;
+		
+			width: fs($width);
+			line-height: fs($line-height);
 			@include fz($font-size);
+			overflow: hidden;
 			float: left;
-			border: 1px solid $linkColor !important;
-			line-height: 1em;
+			border: $border +px solid $linkColor !important;
 			@include border-radius(30px !important);
 			@include box-sizing(content-box !important);
+
 			&#search-text {
-				padding: fs(5) fs(13);
-				padding-right: fs(58);
-				width: fs(202 - 13);
-				margin-right: fs(-58);
-				margin-left: fs(5);
+				margin: fs($margin);
+				padding: fs($padding);
+				padding-right: fs($width);
+				margin-right: fs(-$width + $border);
+				width: fs(202);
 			}
 			
 			&.button {
+				margin: fs($margin) fs($margin) 0 0;
+				padding: fs($padding) 0;
 				@include box-shadow(none);
 				@include border-radius(30px !important);
 			}
@@ -332,8 +314,9 @@ main {
 		 
 		@include text-shadow-repeat(1px 1px 2px #fff,5);
 		
-		@media screen and (max-width: 30em) {
-			font-size: fz(20);
+		@media screen and (max-width: $mediaQuery-small,rem,16) {
+			$font-size: 20;
+			@include fz($font-size);
 		}
 	}
 		
@@ -372,6 +355,10 @@ main {
 		color: #500;
 		max-width: fs($base-width);
 	}
+	
+@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+	position: static;
+}
 }
 
 .content {	
@@ -387,6 +374,10 @@ main {
 		width: fs($base-width);
 		height: auto;
 		display: block;
+		
+		@media screen and (max-width: 49.875em) {
+			width: 100% !important;
+		}
 	}
 	
 	figure,
@@ -450,6 +441,16 @@ main {
 			padding: 0;
 		}
 	}
+	
+@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+	figure,
+	p,
+	li,
+	dt,
+	dd {
+		margin: fs(10) fs(10);
+	}
+}
 }
 
 /*----------------------------------------

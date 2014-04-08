@@ -67,4 +67,24 @@ dl.table {
 			@include background(rgba(#fff,0.7));
 		}
 	}
+
+	@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+		background: transparent;
+		
+		dt {
+			margin: 0 !important;
+			width: auto;
+			font-weight: bold;
+			
+			&:after {
+				padding: 0 fs($padding) 0 0;
+				content: ' : ';
+			}
+		}
+		
+		dd {
+			margin: 0 !important;
+			width: auto;
+		}
+	}
 }
