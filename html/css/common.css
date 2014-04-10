@@ -285,30 +285,25 @@ main h1 {
   -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 30em) {
-  main h1 {
-    font-size: 200%;
-  }
-}
 main h2 {
   border-bottom: 2px solid white;
   border-top: 2px solid white;
   margin: 0 auto;
   margin-bottom: 2rem;
   padding: 0.5rem 3.1rem;
-  line-height: 3.5rem;
-  font-size: 25px;
-  font-size: 2.5rem;
+  line-height: 3.4rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: normal;
   color: #500;
   max-width: 73.6rem;
   background: url('data:image/gif;base64,R0lGODlhBAAEAIABAP///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDRjlFRDM5MEVCNTUxMUUwQkIzNjg2RkJEOTY2MzQwOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RUI0OTIwQ0VCNTYxMUUwQkIzNjg2RkJEOTY2MzQwOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNGOUVEMzhFRUI1NTExRTBCQjM2ODZGQkQ5NjYzNDA5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNGOUVEMzhGRUI1NTExRTBCQjM2ODZGQkQ5NjYzNDA5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAAAQABAAAAgYEEoaoCQUAOw==') repeat left top #faf8f3;
   text-shadow: 1px 1px 2px white,1px 1px 2px white,1px 1px 2px white,1px 1px 2px white,1px 1px 2px white;
 }
-@media screen and (max-width: 480, rem, 16) {
+@media screen and (max-width: 30rem) {
   main h2 {
-    font-size: 20px;
-    font-size: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 main h3 {
@@ -329,6 +324,26 @@ main h4 {
   line-height: 2.8rem;
   font-size: 20px;
   font-size: 2rem;
+  color: #500;
+  max-width: 73.6rem;
+}
+main h5 {
+  margin: 0 auto;
+  margin-bottom: 1.6rem;
+  padding: 0.35rem 0;
+  line-height: 2.5rem;
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #500;
+  max-width: 73.6rem;
+}
+main h6 {
+  margin: 0 auto;
+  margin-bottom: 1.6rem;
+  padding: 0.35rem 0;
+  line-height: 2.5rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   color: #500;
   max-width: 73.6rem;
 }
@@ -441,7 +456,8 @@ main h4 {
   .content li,
   .content dt,
   .content dd {
-    margin: 1rem 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
 

@@ -5,18 +5,18 @@
 ----------------------------------------*/
 dl.commentList {
 	$font-size: 16;
+	$line-height: silver-ratio($font-size);
 	margin: fs(silver-ratio($font-size) + $font-size) 0 0 0;
-	padding-bottom: fs(19);
+	padding-bottom: fs($line-height);
 	
 	dt {
 		margin: 0 auto;
-		padding-top: fs(19);
-		margin-top: fs(19);
+		padding-top: fs($line-height);
+		margin-top: fs($line-height);
 		border-top: 1px solid #dcc;
-		letter-spacing: 0.15em;
-		max-width: fs(736);
+		max-width: fs($base-width);
 		color: #500;
-		line-height: 1.375;
+		line-height: fs($line-height);
 		list-style-type: none;
 
 		#{"/"}width: 36.5em;
@@ -24,17 +24,16 @@ dl.commentList {
 	
 	dd {
 		margin: 0 auto;
-		padding-left: fs(13 + 10 + 18);
-		letter-spacing: 0.15em;
-		max-width: fs(718 - (13 + 10));
+		display: list-item;
+		max-width: fs($base-width);
 		color: #500;
-		line-height:  fs(22);
-		list-style-type: none;
+		line-height:  fs($line-height);
+		list-style-type: disc;
 
 		#{"/"}width: 36.5em;
 		
 		&:last-child {
-			padding-bottom: fs(19);
+			padding-bottom: fs($line-height);
 			border-bottom: 1px solid #dcc;
 		}
 	}

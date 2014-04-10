@@ -281,14 +281,10 @@ main {
 		#{"/"}background: #3194c6;
 		
 		@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
-
-		@media screen and (max-width: 30em) {
-			font-size: fz(20);
-		}
 	}
 	
 	h2 {
-		$font-size: 25;
+		$font-size: 24;
 		$line-height: silver-ratio($font-size);
 		$padding: (silver-ratio($font-size) - $font-size) / 2;
 		$boder: 2;
@@ -314,9 +310,9 @@ main {
 		 
 		@include text-shadow-repeat(1px 1px 2px #fff,5);
 		
-		@media screen and (max-width: $mediaQuery-small,rem,16) {
-			$font-size: 20;
-			@include fz($font-size);
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			padding-right: fs(10,24);
+			padding-left: fs(10,24);
 		}
 	}
 		
@@ -341,6 +337,40 @@ main {
 	
 	h4 {
 		$font-size: 20;
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size) / 2;
+		$boder: 3;
+		$fix-height: $line-height + $padding * 2 + $boder * 2;
+		
+		margin: 0 auto;
+		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
+		padding: fs($padding) 0;
+		line-height: fs($line-height);
+		@include fz($font-size);
+
+		color: #500;
+		max-width: fs($base-width);
+	}
+	
+	h5 {
+		$font-size: 18;
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size) / 2;
+		$boder: 3;
+		$fix-height: $line-height + $padding * 2 + $boder * 2;
+		
+		margin: 0 auto;
+		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
+		padding: fs($padding) 0;
+		line-height: fs($line-height);
+		@include fz($font-size);
+
+		color: #500;
+		max-width: fs($base-width);
+	}
+
+	h6 {
+		$font-size: 18;
 		$line-height: silver-ratio($font-size);
 		$padding: (silver-ratio($font-size) - $font-size) / 2;
 		$boder: 3;
@@ -448,7 +478,8 @@ main {
 	li,
 	dt,
 	dd {
-		margin: fs(10) fs(10);
+		margin-right: fs(10);
+		margin-left: fs(10);
 	}
 }
 }

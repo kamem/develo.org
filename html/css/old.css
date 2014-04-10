@@ -745,6 +745,7 @@ p.pagetop:last-child {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    overflow: hidden;
   }
   .service li {
     margin: 5px 10px 0 0;
@@ -891,32 +892,30 @@ p.pagetop:last-child {
 ----------------------------------------*/
 dl.commentList {
   margin: 39px 0 0 0;
-  padding-bottom: 19px;
+  padding-bottom: 23px;
 }
 dl.commentList dt {
   margin: 0 auto;
-  padding-top: 19px;
-  margin-top: 19px;
+  padding-top: 23px;
+  margin-top: 23px;
   border-top: 1px solid #dcc;
-  letter-spacing: 0.15em;
   max-width: 736px;
   color: #500;
-  line-height: 1.375;
+  line-height: 23px;
   list-style-type: none;
   /width: 36.5em;
 }
 dl.commentList dd {
   margin: 0 auto;
-  padding-left: 41px;
-  letter-spacing: 0.15em;
-  max-width: 695px;
+  display: list-item;
+  max-width: 736px;
   color: #500;
-  line-height: 22px;
-  list-style-type: none;
+  line-height: 23px;
+  list-style-type: disc;
   /width: 36.5em;
 }
 dl.commentList dd:last-child {
-  padding-bottom: 19px;
+  padding-bottom: 23px;
   border-bottom: 1px solid #dcc;
 }
 

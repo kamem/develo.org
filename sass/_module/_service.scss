@@ -58,6 +58,7 @@
 		height: fs(silver-ratio($fix-height));
 		background: transparent;
 		@include box-shadow(none);
+		overflow: hidden;
 		
 		li {
 			margin: fs(5) fs(10) 0 0;
