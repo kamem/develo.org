@@ -19,7 +19,7 @@ var pageWrapTag ='';
 
 $(function() {
 //（動き,スピード,ターゲット（#headerなど）)
-$('a[href^="#"]').smoothAnchor({easing : 'easeOutQuart',speed : 1000});
+$('a[href^="#"]:not(.detailsSelect a):not(.pageNav h2 a)').smoothAnchor({easing : 'easeOutQuart',speed : 1000});
 
 //boxModelによって実装が違うみたいでたとえば、後方互換モードは body、Operaは html,body の両方指定にすると、不具合が出る
 pageWrapTag = $.support.boxModel ? navigator.appName.match(/Opera/) ? "html" : "html,body" : "body";
@@ -80,12 +80,11 @@ $.fn.smoothAnchor = function(options) {
 
 //タグをクリックしたとき
 function tagClick(tag,easing,speed,target,delay,func) {
-	tag.click(function () {
+	$(document).on('click',tag.selector,function () {
 		
 		//タグにアンカーがない指定したアンカー（target）を入れる
 		target = (this.hash) ? target = this.hash : target;
 
-		var tag = this;
 		smoothAnchor({tag: tag,easing: easing,speed: speed,target: target,delay:delay,func:func});
 	return false;
 	});

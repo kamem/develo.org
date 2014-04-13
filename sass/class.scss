@@ -15,6 +15,13 @@
 "_module/_commntList";
 
 /*----------------------------------------
+	.off
+----------------------------------------*/
+.off {
+	display: none;
+}
+
+/*----------------------------------------
 	img
 ----------------------------------------*/
 .main {
@@ -82,5 +89,8 @@ p.more {
 	li {
 		margin-left: fs($font-size);
 		@include inline-block;
+	}
+	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+		margin-right: fs(10);
 	}
 }

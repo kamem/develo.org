@@ -297,6 +297,9 @@ p.detailsSelect a:before {
     display: none;
   }
 }
+p.detailsSelect.off {
+  display: block;
+}
 p.detailsSelect.off a:before {
   content: "▼" !important;
 }
@@ -491,6 +494,9 @@ em.num1 {
 /*----------------------------------------
 	pageNav
 ----------------------------------------*/
+.pageNav.off {
+  display: block;
+}
 .pageNav dt,
 .pageNav h2 {
   padding: 0 !important;
@@ -819,7 +825,7 @@ p.pagetop:last-child {
   top: 50%;
   margin-top: -9.5px;
 }
-@media screen and (max-width: 47.25rem) {
+@media screen and (max-width: 49.875rem) {
   .tags {
     margin-left: 10px;
     margin-right: 10px;

@@ -29,6 +29,7 @@ p.detailsSelect {
 	}
 	
 	&.off {
+		display: block;
 		a:before {
 			content: "▼" !important;
 		}

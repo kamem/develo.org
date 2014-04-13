@@ -18,7 +18,7 @@ body#index {
 		$boder: 2;
 		$fix-height: $line-height + $padding * 2 + $boder;
 		
-		padding: fs($padding) fs($font-size);
+		padding: fs($padding) 0;
 		@include fz($font-size);
 		line-height: fs($line-height);
 		margin: 0;
@@ -109,6 +109,7 @@ body#index {
 		}
 		
 		&.off {
+			display: block;
 			padding-bottom: 0;
 			
 			footer,
@@ -385,6 +386,27 @@ body#list {
 		}
 	}
 
+	p.pagetop {
+		background: transparent !important;
+	}
+}
+
+/*----------------------------------------
+	cgi
+----------------------------------------*/
+body.search,
+body.comment_preview,
+body.comment_error,
+body.comment_thanks{
+	h1 {
+		$font-size: 16;
+		margin-bottom: fs(silver-ratio($font-size) + $font-size);
+	}
+	
+	.detailsSelect {
+		margin-top: -(fs(silver-ratio($font-size) + $font-size));
+	}
+	
 	p.pagetop {
 		background: transparent !important;
 	}

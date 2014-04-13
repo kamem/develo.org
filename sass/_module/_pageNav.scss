@@ -12,6 +12,10 @@
 	$letter-spacing: 2.4;
 	$fix-height: $line-height + $padding * 2;
 	
+	&.off {
+		display: block;
+	}
+	
 	dt,
 	h2 {
 		padding: 0 !important;

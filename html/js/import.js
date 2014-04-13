@@ -9,7 +9,8 @@
 "smoothAnchor.js",
 "google-code-prettify/prettify.js",
 "jquery.cookie.js",
-"jquery.extratouch.min.js",
+"jquery.extratouch.js",
+"jquery.pjax.js",
 "common.js",
 "imgSize.js"
 );

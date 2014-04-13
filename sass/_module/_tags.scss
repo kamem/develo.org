@@ -58,7 +58,7 @@
 			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
 		}
 	}
-@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-large,rem,16)) {
 	margin-left: fs(10);
 	margin-right: fs(10);
 }

@@ -52,32 +52,101 @@ function scriptCreate(name) {
 //----------------------------------------------------------------------
 
 $(function(){
-	
-	prettyPrint();
 
-	//カテゴリー
-	var $onOff = $('.categories,.tags');
-	$onOff.extraTouch(function(e) {
-		var $this = $(e.currentTarget),
-			href = $(e.target)[0].href;
-		if(href !== undefined) {
-			location.href = href;
-		} else {
-			$this.toggleClass('on');
-		}
+prettyPrint();
+	
+//---------------------------------------------
+//	pjaxの処理
+//---------------------------------------------
+$(document).pjax('a', {
+	container:'main', 
+	fragment: 'main',
+	timeout: 30000
+});
+	  
+$(document).on('pjax:send', function(e) {
+	$('body').append('<div class="test"></div>').find('.test').html('ローディング').css({
+		position: 'fixed',
+		top: 0,
+		left: 0,
+		background: '#000',
+		color: '#fff',
+		zIndex: 100
 	});
 	
-	$(".guide .search a").unbind();
-	$(".guide .search a").click(function () {
-		$("#searchBox").toggleClass("on");
-		if($.cookie('searchBox') == 'on') {
-			$.cookie('searchBox', 'off', { expires: 365, path: '/' });
-		}
-		else {
-			$.cookie('searchBox', 'on', { expires: 365, path: '/' });
-		}
-		return false;
+	$('main').addClass('off');
+});
+
+$(document).on('pjax:complete', function(e,data) {
+	$('.test').remove();
+	var data = data.responseText;
+	data.match(/id="([^\"]+)/);
+	var id = RegExp.$1;
+	$('body')[0].id = id;
+	data.match(/class="([^\"]+)/);
+	var cla = RegExp.$1;
+	$('body')[0].className = cla;
+
+	var topicpath = $(data).find('.topicpath').html();
+	$('.topicpath').html(topicpath);
+	
+	imgSize.$content = $('.noResize img,img.noResize');
+	imgSize.$content.imagesLoaded(function(){
+		imgSize.set(imgSize.$content);
+		imgSize.parent.set(imgSize.$content);
 	});
+	
+	cookieDetailsSet();
+	$('main').removeClass('off');
+});
+
+/*
+$('#searchBox').keypress(function (e) {
+    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+        console.log('test');
+        $.pjax.submit(e, 'main');
+        return  false;
+    }
+});
+
+$('#searchBox .button').click(function (e) {
+	$.pjax.submit(e, 'main');
+	return false;
+});
+*/
+
+$(document).on('submit', '#searchBox,#commentsForm', function(e) {
+	$.pjax.submit(e, {
+		container:'main', 
+		fragment: 'main',
+		timeout: 30000
+	});
+  return false;
+})
+
+//---------------------------------------------
+//	popup
+//---------------------------------------------
+var $onOff = $('.categories,.tags');
+$onOff.extraTouch(function(e) {
+	var $this = $(e.currentTarget),
+		href = $(e.target)[0].href;
+	if(href !== undefined) {
+		//location.href = href;
+	} else {
+		$this.toggleClass('on');
+	}
+});
+
+var $searchIco = $('.guide .search a');
+$searchIco.click(function () {
+	$("#searchBox").toggleClass("on");
+
+	var cookieName = 'search';
+	cookie[cookieName] = $.cookie(cookieName) == 'off' ? 'on' : 'off';
+	cookie(cookieName,cookie.details);
+	return false;
+});
 	
 	
 	$(".pageNav h2 a").unbind();
@@ -111,17 +180,24 @@ $(function(){
 	}
 
 	$(".detailsSelect a").unbind();
-	$(".detailsSelect a").click(function () {
-		$('.detailsSelect').toggleClass("off");
-		$("article").toggleClass("off");
-
-		if($.cookie('detailsSelect') == 'off') {
-			$.cookie('detailsSelect', 'on', { expires: 365, path: '/' });
-		}
-		else {
-			$.cookie('detailsSelect', 'off', { expires: 365, path: '/' });
-		}
-		
+	
+	$(document).on('click','.detailsSelect a',function () {
+		var cookieName = 'details';
+		cookie[cookieName] = $.cookie(cookieName) == 'off' ? 'on' : 'off';
+		cookie(cookieName,cookie.details);
+		cookieDetailsSet();
 		return false;
 	});
-})
+	
+	function cookie(name,key) {
+		$.cookie(name, key, { expires: 365, path: '/' });
+	};
+	
+	function cookieDetailsSet() {
+		$('.detailsSelect,article article')[(cookie.details === 'off' ? 'add' : 'remove') + 'Class']('off');
+	};
+});
+
+var cookie = {
+	details : $.cookie('detailsSelect')
+};

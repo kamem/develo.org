@@ -225,7 +225,7 @@ main,
 		input {
 			$width: 58;
 			$border: 1;
-		
+
 			width: fs($width);
 			line-height: fs($line-height);
 			@include fz($font-size);
@@ -239,7 +239,7 @@ main,
 				margin: fs($margin);
 				padding: fs($padding);
 				padding-right: fs($width);
-				margin-right: fs(-$width + $border);
+				margin-right: fs(-($width + $border));
 				width: fs(202);
 			}
 			
@@ -261,6 +261,10 @@ main {
 	background-color: #f7f3e8;
 	position: relative;
 	z-index: 1;
+	
+	&.off {
+		display: block;
+	}
 
 	h1 {
 		$font-size: 25;
