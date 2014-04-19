@@ -6,11 +6,13 @@
 	}
 })(
 "jquery.js",
+"ga.js",
 "smoothAnchor.js",
 "google-code-prettify/prettify.js",
 "jquery.cookie.js",
 "jquery.extratouch.js",
 "jquery.pjax.js",
 "common.js",
+"develo.js",
 "imgSize.js"
 );

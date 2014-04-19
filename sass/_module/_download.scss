@@ -1,36 +1,37 @@
 @charset "utf-8";
 
 
-
 /*----------------------------------------
 	download
 ----------------------------------------*/
-.download a {
+.download {
 	$font-size: 16;
 	$line-height: silver-ratio($font-size);
 	$padding: (silver-ratio($font-size) - $font-size) / 2;
 
-	padding: fs($padding) 0;
-	display: block;
-	color: #fff;
-	text-align: center;
-	text-decoration: none;
-
-	@include background(linear-gradient(top, #ff3399 0%, #ff5bad 100%));
-	@include border-radius(4px);
-	@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
-
-	&:hover {
-		position: relative;
-		@include opacity(0.6);
-		@include transition(0.13s ease-in-out);
-	}
+	a {
+		padding: fs($padding) 0;
+		display: block;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
 	
-	&:active {
-		top: 1px;
-		left: 1px;
-		@include box-shadow(none);
-		@include transition(none !important);
+		@include background(linear-gradient(top, #ff3399 0%, #ff5bad 100%));
+		@include border-radius(4px);
+		@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
+	
+		&:hover {
+			position: relative;
+			@include opacity(0.6);
+			@include transition(0.13s ease-in-out);
+		}
+		
+		&:active {
+			top: 1px;
+			left: 1px;
+			@include box-shadow(none);
+			@include transition(none !important);
+		}
 	}
 }
 
@@ -42,6 +43,8 @@ ul.download {
 
 	overflow: hidden;
 	min-height: fs($fix-height);
+	clear: both;
+
 	li {
 		background: none;
 		list-style-type: none;

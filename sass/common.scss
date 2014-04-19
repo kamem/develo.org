@@ -2,6 +2,20 @@
 
 @import "_extension_import";
 
+body {
+	&.loading {
+		&:after {
+			content: '';
+			display: block;
+			@include background-fit('common/loading.gif');
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+		}
+	}
+}
+
 #header,
 main,
 #footer {
@@ -45,6 +59,7 @@ main,
 			display: block;
 			overflow: hidden;
 			position: relative;
+			top: fs(($header-height - $title-height) / 2);
 			left: fs(($base-width-big - $base-width) / 2);
 			background: image-url($title-img) no-repeat left center;
 			background: inline-image($title-img) no-repeat left center;
@@ -261,6 +276,16 @@ main {
 	background-color: #f7f3e8;
 	position: relative;
 	z-index: 1;
+
+	
+//	.loading & {
+//		$blur: 3px;
+//		filter: blur($blur);
+//		-webkit-filter: blur($blur);
+//		-moz-filter: blur($blur);
+//		-o-filter: blur($blur);
+//		-ms-filter: blur($blur);
+//	}
 	
 	&.off {
 		display: block;
@@ -315,8 +340,8 @@ main {
 		@include text-shadow-repeat(1px 1px 2px #fff,5);
 		
 		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
-			padding-right: fs(10,24);
-			padding-left: fs(10,24);
+			padding-right: fs(10);
+			padding-left: fs(10);
 		}
 	}
 		
@@ -337,6 +362,11 @@ main {
 
 		color: #500;
 		max-width: fs($base-width);
+
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			padding-right: fs(10);
+			padding-left: fs(10);
+		}
 	}
 	
 	h4 {
@@ -354,6 +384,11 @@ main {
 
 		color: #500;
 		max-width: fs($base-width);
+
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			padding-right: fs(10);
+			padding-left: fs(10);
+		}
 	}
 	
 	h5 {
@@ -371,6 +406,11 @@ main {
 
 		color: #500;
 		max-width: fs($base-width);
+
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			padding-right: fs(10);
+			padding-left: fs(10);
+		}
 	}
 
 	h6 {
@@ -388,6 +428,11 @@ main {
 
 		color: #500;
 		max-width: fs($base-width);
+
+		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+			padding-right: fs(10);
+			padding-left: fs(10);
+		}
 	}
 	
 @media screen and (max-width: fs($mediaQuery-small,rem,16)) {
@@ -456,7 +501,7 @@ main {
 	
 	figure,
 	p {
-		margin-bottom: fs(silver-ratio($font-size) + $font-size);
+		margin: fs(silver-ratio($font-size) + $font-size) auto;
 	}
 
 	figure {
@@ -467,13 +512,6 @@ main {
 	
 	figcaption {
 		margin-top: fs(silver-ratio($font-size) - $font-size);
-	}
-
-	section {
-		padding: fs(silver-ratio($font-size) - $font-size) 0;
-		section {
-			padding: 0;
-		}
 	}
 	
 @media screen and (max-width: fs($mediaQuery-middle,rem,16)) {

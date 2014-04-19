@@ -15,18 +15,11 @@
 "_module/_commntList";
 
 /*----------------------------------------
-	.off
-----------------------------------------*/
-.off {
-	display: none;
-}
-
-/*----------------------------------------
 	img
 ----------------------------------------*/
 .main {
 	$font-size: 16;
-	margin: 0 auto  fs(silver-ratio($font-size) + $font-size) auto !important;
+	margin: fs(silver-ratio($font-size) + $font-size) auto !important;
 	max-width: fs($base-width-big) !important;
 	max-height: fs(silver-ratio($base-width-big) - $base-width-big) !important;
 	overflow: hidden;

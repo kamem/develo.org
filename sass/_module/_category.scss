@@ -5,9 +5,9 @@
 ----------------------------------------*/
 .categories {
 	$font-size: 16;
+	$line-height: silver-ratio($font-size);
 	padding: fs(5) 0;
 	margin: 0 auto;
-	font-size: fs($font-size);
 	max-width: fs($base-width-big);
 	background: #eee;
 	overflow: hidden;
@@ -21,7 +21,7 @@
 	li{
 		float: left;
 		width: 20%;
-		line-height: fs(60);
+		line-height: fs($line-height);
 		
 		#{"/"}width: 19.9%;
 
@@ -34,11 +34,14 @@
 		}
 		
 		a {
-			display: block;
 			text-align: center;
 			text-decoration: none;
 			position: relative;
 			border-bottom: 5px solid #fff;
+			display: table-cell;
+			vertical-align: middle;
+			width: 20%;
+			height: fs(60);
 
 			@include background(inline-image('common/white.gif') repeat-y left top,linear-gradient(top, #fcfcfc 0%, #f4f4f4 60%, #ededed 60%, #fcfcfc 100%));
 			#{"/"}background: #fff;
@@ -66,67 +69,21 @@
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
-	padding: fs(silver-ratio($font-size)) 0;
-	display: block;
-	background: rgba(#fff,0.9);
-	border: 1px solid #fff;
-	position: relative;
-	color: $linkColor;
-
-	@include arrow-set(10px,2px, $linkColor,'right');
-	
-	&:after {
-		left: 10px;
-	}
-
-	&:before {
-		content: "カテゴリーの一覧を見る";	
-		display: block;
-		text-align: center;
-	}
-		
-	&.on {
-		padding: 0;
-		position: fixed;
-		background: rgba(#000,0.5);
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: none;
-		z-index: 5;
-		
-		&:after,
-		&:before {
-			display: none;
-		}
-		
-		li {
-			display: block;
-		}
-	}
-
+@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+	$font-size: 14;
 	li {
-		display: none;
-		margin: 0 auto;
-		float: none;
-		width: 92%;
-		position: relative;
-		top: 10px;
+		@include fz($font-size);
+	}
+}
+
+@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+	$font-size: 12;
+	$line-height: silver-ratio($font-size);
+	li {
+		@include fz($font-size);
+		line-height: fs($line-height);
 		a {
-			border-bottom-width: 1px;
-			font-weight: bold;
-			&:hover {
-				@include opacity(0.9);
-			}
-		}
-		&:first-child a {
-			@include border-radius(4px 4px 0 0);
-		}
-		
-		&:last-child a {
-			@include border-radius(0 0 4px 4px);
+			height: fs(60);
 		}
 	}
 }

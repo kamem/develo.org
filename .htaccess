@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} !FeedBurner
+RewriteRule ^.*$ http://feeds.feedburner.com/develo [L,R]

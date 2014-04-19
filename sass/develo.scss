@@ -17,6 +17,7 @@ pre {
 	line-height: fs($line-height);
 	@include fz($font-size);
 	max-width: fs($base-width);
+	letter-spacing: 0;
 
 	position: relative;
 	clear: both;
@@ -142,6 +143,19 @@ textarea:focus {
 	background-color: #fff;
 }
 
+/*----------------------------------------
+	ins
+----------------------------------------*/
+ins {
+	$font-size: 16;
+	margin: fs(silver-ratio($font-size + $font-size)) auto;
+	max-width: fs($base-width-big);
+	border: 7px solid $linkColor;
+	display: block;
+	text-decoration: none;
+	@include box-sizing(border-box);
+}
+
 hr {
 	display: block;
 	border: none;
@@ -149,4 +163,30 @@ hr {
 	background: inline-image("common/section.png") no-repeat center top;
 	@include fz($font-size);
 	margin-bottom: fs(silver-ratio($font-size) + $font-size);
+}
+
+/*----------------------------------------
+	blockquote
+----------------------------------------*/
+blockquote {
+	$font-size: 16;
+	margin: fs(silver-ratio($font-size) + $font-size) auto;
+	color: $textColor;
+	background: rgba(#fff,0.5);
+	max-width: fs($base-width-big);
+}
+
+blockquote[title]::before {
+	$font-size: 16;
+	content: attr(title);
+	display: block;
+	@include fz($font-size);
+}
+
+blockquote[cite]::after {
+	$font-size: 13;
+	content: attr(cite);
+	display: block;
+	text-align: right;
+	@include fz($font-size);
 }

@@ -9,7 +9,7 @@
 	$padding: 5;
 	$fix-height: $font-size + $padding * 2;
 
-	margin: 0 auto fs(silver-ratio($fix-height)) auto;
+	margin: 0 auto;
 	max-width: fs($base-width);
 	padding: 0 fs(($base-width-big - $base-width) / 2);
 	overflow: hidden;

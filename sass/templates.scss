@@ -109,7 +109,6 @@ body#index {
 		}
 		
 		&.off {
-			display: block;
 			padding-bottom: 0;
 			
 			footer,
@@ -142,9 +141,13 @@ body#index {
 		@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
 			padding-bottom: 0;
 			
-			.content,
-			footer {
+			footer,
+			.content {
 				display: none;
+			}
+			
+			.data {
+				margin-bottom: 2px;
 			}
 		}
 	}
@@ -395,12 +398,14 @@ body#list {
 	cgi
 ----------------------------------------*/
 body.search,
-body.comment_preview,
-body.comment_error,
-body.comment_thanks{
-	h1 {
-		$font-size: 16;
-		margin-bottom: fs(silver-ratio($font-size) + $font-size);
+body#comment_preview,
+body#comment_error,
+body#comment_thanks {
+	main {
+		h1 {
+			$font-size: 16;
+			margin-bottom: fs(silver-ratio($font-size) + $font-size);
+		}
 	}
 	
 	.detailsSelect {

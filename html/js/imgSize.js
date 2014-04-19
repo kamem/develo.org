@@ -3,7 +3,6 @@ var imgSize = {
 	$content: '',
 	
 	set: function($content) {
-		console.log('on');
 		$content.each(function(i){
 			imgSize.info[i] = {
 				content : $(this),
@@ -31,7 +30,6 @@ var imgSize = {
 		});
 	
 		$(window).bind("orientationchange resize load",function(){
-			console.log(imgSize.$content);
 			imgSize.parent.set(imgSize.$content);
 			size();
 		});
