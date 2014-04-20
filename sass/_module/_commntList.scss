@@ -37,4 +37,12 @@ dl.commentList {
 			border-bottom: 1px solid #dcc;
 		}
 	}
+
+@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+	dt,
+	dd {
+		margin-right: fs(10);
+		margin-left: fs(10);
+	}
+}
 }

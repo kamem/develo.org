@@ -79,11 +79,12 @@ dl.table {
 		}
 	}
 
-	@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+	@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 		background: transparent;
 		
 		dt {
 			margin: 0 !important;
+			padding-bottom: 0;
 			width: auto;
 			font-weight: bold;
 			

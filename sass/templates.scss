@@ -53,7 +53,7 @@ body#index {
 		margin-top: fs($fix-height - 1);
 	}
 
-	@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+	@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 		#header .description {
 			display: none;
 		}
@@ -133,12 +133,12 @@ body#index {
 			}
 		}
 		
-		@media screen and (max-width:  fs($mediaQuery-middle,rem,16)) {
+		@media screen and (max-width:  fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 			h1 {
 				padding: fs(8) fs(10);
 			}
 		}
-		@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-bottom: 0;
 			
 			footer,
@@ -247,7 +247,7 @@ dl.log {
 	}
 	
 	
-	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 		dt,
 		dd {
 			padding: fs(10) fs(10);
@@ -324,7 +324,7 @@ section#comments {
 			}
 		}
 		
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			dt {
 				margin-right: 0 !important;
 				border: none;
@@ -345,12 +345,18 @@ section#comments {
 		$padding: silver-ratio($font-size) - $font-size;
 		margin: 0 auto;
 		max-width: fs($base-width);
+		text-align: center;
 		
 		input {
+			@include inline-block;
 			padding: fs($padding) 0;
 			line-height: fs($line-height);
 			width: 48%;
-			float: left;
+			
+			&.post:first-child {
+				width: 100%;
+			}
+			
 			&:first-child {
 				margin-right: 4%;
 			}
@@ -371,7 +377,7 @@ section#trackbacks {
 		max-width: fs($base-width);
 		font-size: fz($font-size);
 		color: #500;
-		@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 			padding: fs(10) fs(10);
 		}
 	}
@@ -414,5 +420,13 @@ body#comment_thanks {
 	
 	p.pagetop {
 		background: transparent !important;
+	}
+	
+	@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+		main {
+			h1 {
+				margin-bottom: 0;
+			}
+		}
 	}
 }

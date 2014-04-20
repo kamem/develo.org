@@ -19,12 +19,12 @@ p.detailsSelect {
 		tex-decoration: none;
 	}
 
-	@media screen and (max-width: 51.125em) {
+	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 			margin-left: fs(10);
 			margin-right: fs(10);
 	}
 
-	@media screen and (max-width: 30em) {
+	@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			display: none;
 	}
 	

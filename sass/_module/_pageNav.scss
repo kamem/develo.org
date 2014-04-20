@@ -165,7 +165,7 @@
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-large,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
 	li {
 		margin: 0 fs(2) !important;
 		margin-bottom: fs(2) !important;
@@ -177,7 +177,7 @@
 	}
 }
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	li {
 		a {
 			padding: fs($padding) fs(10);

@@ -77,6 +77,7 @@ $(document).on('pjax:complete', function(e,data) {
 	var location = window.location.pathname + window.location.search;
 	ga('send', 'pageview', location);
 	
+	imgSize.init();
 	dlTable();
 	prettyPrint();
 });
@@ -163,12 +164,12 @@ $onOff.extraTouch(function(e) {
 		return false;
 	});
 	
-	$(document).on('click','.pageNav h2 a',function () {
+	$(document).on('click','.pageNav h2 a,.pageNav dt a',function () {
 		var cookieName = 'pageNav';
 		cookie[cookieName] = $.cookie(cookieName) == 'off' ? 'on' : 'off';
 		cookie(cookieName,cookie[cookieName]);
 		changeClass(
-			$(".pageNav,.pageNav > ul,.pageNav > ol"),
+			$(".pageNav,.pageNav > ul,.pageNav > ol,.pageNav > dd > ul,.pageNav > dd > ol"),
 			cookieName,
 			'off'
 		);

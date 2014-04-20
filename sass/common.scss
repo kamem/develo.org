@@ -3,6 +3,7 @@
 @import "_extension_import";
 
 body {
+	-webkit-text-size-adjust: none;
 	&.loading {
 		&:after {
 			content: '';
@@ -74,12 +75,12 @@ main,
 			}
 		}
 
-		@media screen and (max-width:  fs($mediaQuery-middle,rem,16)) {
+		@media screen and (max-width:  fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 			a {
 				left: fs(10);
 			}
 		}
-		@media screen and (max-width:  fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			a {
 				width: auto;
 				background-size: 100%;
@@ -119,7 +120,7 @@ main,
 			}
 		}
 		
-	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 		padding: 0 fs(10);
 	}
 	}
@@ -180,7 +181,7 @@ main,
 			}
 		}
 		
-		@media screen and (max-width: fs($mediaQuery-large,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
 			li {
 				margin-right: fs(10);
 				top: fs(15);
@@ -339,7 +340,7 @@ main {
 		 
 		@include text-shadow-repeat(1px 1px 2px #fff,5);
 		
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-right: fs(10);
 			padding-left: fs(10);
 		}
@@ -363,7 +364,7 @@ main {
 		color: #500;
 		max-width: fs($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-right: fs(10);
 			padding-left: fs(10);
 		}
@@ -385,7 +386,7 @@ main {
 		color: #500;
 		max-width: fs($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-right: fs(10);
 			padding-left: fs(10);
 		}
@@ -407,7 +408,7 @@ main {
 		color: #500;
 		max-width: fs($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-right: fs(10);
 			padding-left: fs(10);
 		}
@@ -429,13 +430,13 @@ main {
 		color: #500;
 		max-width: fs($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			padding-right: fs(10);
 			padding-left: fs(10);
 		}
 	}
 	
-@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 	position: static;
 }
 }
@@ -445,8 +446,6 @@ main {
 	$line-height: silver-ratio($font-size);
 	$em-width: 40;
 	$letter-spacing: 2.4;
-	
-	padding: 1px 0;
 
 	img {
 		margin: 0 auto;
@@ -514,7 +513,7 @@ main {
 		margin-top: fs(silver-ratio($font-size) - $font-size);
 	}
 	
-@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	figure,
 	p,
 	li,

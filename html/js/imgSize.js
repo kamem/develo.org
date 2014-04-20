@@ -17,6 +17,17 @@ var imgSize = {
 				imgSize.info[i].parentWidth = $(this).parent().width();
 			});
 		}
+	},
+		
+	init: function() {
+		for(var i = 0;i < imgSize.info.length;i++) {
+			var width = imgSize.info[i].width >= imgSize.info[i].parentWidth ? '100%' : imgSize.info[i].width;
+			
+			imgSize.info[i].content.css({
+				border : '1px solid red',
+				cssText : 'width : ' + width + ' !important'
+			});
+		}
 	}
 };
 
@@ -31,19 +42,8 @@ var imgSize = {
 	
 		$(window).bind("orientationchange resize load",function(){
 			imgSize.parent.set(imgSize.$content);
-			size();
+			imgSize.init();
 		});
-		
-		function size() {
-			for(var i = 0;i < imgSize.info.length;i++) {
-				var width = imgSize.info[i].width >= imgSize.info[i].parentWidth ? '100%' : imgSize.info[i].width;
-				
-				imgSize.info[i].content.css({
-					border : '1px solid red',
-					cssText : 'width : ' + width + ' !important'
-				});
-			}
-		}
 	});
 }(jQuery));
 

@@ -10,4 +10,4 @@ cd `dirname $0`
 # sass --style expanded --watch sass:html/css/ --cache-location /Users/shake/.sass-cache/
 
 # compassの場合
-compass watch --no-line-comments --poll -s compressed  --force
+compass watch --no-line-comments --poll -s compressed

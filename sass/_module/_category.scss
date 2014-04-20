@@ -69,14 +69,14 @@
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	$font-size: 14;
 	li {
 		@include fz($font-size);
 	}
 }
 
-@media screen and (max-width: fs($mediaQuery-small,rem,16)) {
+@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 	$font-size: 12;
 	$line-height: silver-ratio($font-size);
 	li {
