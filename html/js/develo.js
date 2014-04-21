@@ -59,9 +59,9 @@ $(document).on('pjax:complete', function(e,data) {
 	imgSize.$content.imagesLoaded(function(){
 		imgSize.set(imgSize.$content);
 		imgSize.parent.set(imgSize.$content);
+		imgSize.init();
 	});
 	
-	sns();
 	changeClass(
 		$('.detailsSelect,article article'),
 		'details',
@@ -77,10 +77,12 @@ $(document).on('pjax:complete', function(e,data) {
 	var location = window.location.pathname + window.location.search;
 	ga('send', 'pageview', location);
 	
-	imgSize.init();
 	dlTable();
 	prettyPrint();
+	sns();
 });
+
+
 
 /*
 $('#searchBox').keypress(function (e) {
