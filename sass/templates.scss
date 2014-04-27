@@ -324,6 +324,11 @@ section#comments {
 			}
 		}
 		
+		@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+			margin-right: fs(10);
+			margin-left: fs(10);
+		}
+		
 		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			dt {
 				margin-right: 0 !important;
@@ -361,6 +366,11 @@ section#comments {
 			&:first-child {
 				margin-right: 4%;
 			}
+		}
+		
+		@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+			margin-right: fs(10);
+			margin-left: fs(10);
 		}
 	}
 }

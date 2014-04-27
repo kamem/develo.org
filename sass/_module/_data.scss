@@ -41,12 +41,43 @@
 			display: none;
 		}
 	}
+	
+	.tag {
+		a {
+			$font-size: 13;
+			$line-height: $font-size;
+			$padding: 2;
+			$border: 1;
+			$fix-height: $line-height + $padding * 2 + $border * 2;
+			$triangle-size: 6;
+	
+			margin-left: fs($triangle-size);
+			@include fz($font-size);
+			line-height: fs($font-size);
+					
+			padding: fs($padding) fs(5);
+			border: $border + px #fff,0.7;
+			text-decoration: none;
+			
+			background: #fff;
+			position: relative;
 
-	@media screen and (max-width: 47.25em) {
+			@include border-radius(0 2px 2px 0);
+			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
+			
+			@include box-shadow(1px1px 1px rgba(0,0,0,0.2));
+
+			&:hover {
+				@include rotate(3deg);
+			}
+		}
+	}
+
+	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 		padding: 0 fs(10);
 	}
 	
-	@media screen and (max-width: 30em) {
+	@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 		margin: 0 auto;
 		font-size: fz(11);
 		max-width: fs(736);

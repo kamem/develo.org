@@ -12,6 +12,7 @@ body {
 			position: fixed;
 			top: 50%;
 			left: 50%;
+			margin: round(-$imgHeight / 2) round(-$imgWidth / 2);
 			z-index: 10;
 		}
 	}
@@ -122,6 +123,7 @@ main,
 		
 	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 		padding: 0 fs(10);
+		visibility: hidden;
 	}
 	}
 	
@@ -309,6 +311,7 @@ main {
 		background: inline-image("common/entry_bg.gif");
 		position: relative;
 		#{"/"}background: #3194c6;
+		word-wrap: break-word;
 		
 		@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 	}
@@ -512,7 +515,7 @@ main {
 	figcaption {
 		margin-top: fs(silver-ratio($font-size) - $font-size);
 	}
-	
+
 @media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	figure,
 	p,

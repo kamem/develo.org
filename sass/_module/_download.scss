@@ -63,4 +63,25 @@ ul.download {
 			}
 		}
 	}
+
+@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+	li {
+		&.download {
+			margin-bottom: 0 !important;
+			
+			a {
+				@include border-radius(4px 4px 0 0);
+			}
+		}
+		&.github {
+			clear: both;
+			a {
+				border-top: 2px solid #fff;
+				border-left: none;
+				float: none;
+				@include border-radius(0 0 4px 4px);
+			}
+		}
+	}
+}
 }

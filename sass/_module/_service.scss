@@ -27,11 +27,15 @@
 	li {
 		margin-bottom: fs(3);
 		position: relative;
-		top: 35px;
-		left: 14px;
+		top: 50px;
+		left: 30px;
 		font-size: 0;
+		
+		&.twitter {
+			width: 100px;
+		}
 	}
-	
+
 	&:after {
 		$border: 3;
 		$size: 25;
@@ -47,7 +51,12 @@
 		@include border-radius($size + px);
 		@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 	}
-	
+
+	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+		margin-left: fs(10) !important;
+		margin-right: fs(10) !important;
+	}
+
 	@media screen and (max-width: 77.187em) {
 		border: none;
 		margin: 0 auto;
@@ -58,9 +67,9 @@
 		height: fs(silver-ratio($fix-height));
 		background: transparent;
 		@include box-shadow(none);
-		overflow: hidden;
+		//overflow: hidden;
 		@include border-radius(0);
-		
+
 		li {
 			margin: fs(5) fs(10) 0 0;
 			position: static;

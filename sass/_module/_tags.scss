@@ -40,8 +40,6 @@
 		@include inline-block;
 		@include fz($font-size);
 		line-height: fs($font-size);
-		
-		-webkit-filter: drop-shadow(1px1px 1px rgba(0,0,0,0.1));
 			
 		&:hover {
 			@include rotate(3deg);
@@ -53,9 +51,12 @@
 			
 			background: #fff;
 			position: relative;
+			text-decoration: none;
 
 			@include border-radius(0 2px 2px 0);
 			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
+		
+			@include box-shadow(1px1px 1px rgba(0,0,0,0.2));
 		}
 	}
 @media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
