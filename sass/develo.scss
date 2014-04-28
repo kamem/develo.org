@@ -23,7 +23,7 @@ pre {
 	clear: both;
 	overflow: auto;
 
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.9);
 	#{"/"}background: #fff;
 	background/*\**/: #fff \9;
 
@@ -41,6 +41,7 @@ pre {
 		top: 0;
 		line-height: 1;
 		@include border-radius(2px 2px 0 0);
+		@include opacity(0.7);
 	}
 
 	$type: css js html;
@@ -51,7 +52,7 @@ pre {
 	@each $name in $type {
 		$i: $i + 1;
 		&[class*="lang-#{$name}"] {
-			border-color: nth($typeborderColor,$i);
+			//border-color: nth($typeborderColor,$i);
 			&:after {
 				content: nth($typeStr,$i);
 				color: nth($typeColor,$i);
