@@ -154,6 +154,12 @@
 			a {
 				padding: 0 fs(($base-width-big - $base-width) / 2 * 2);
 			}
+			
+			li {
+				a {
+					padding: 0 fs(($base-width-big - $base-width) / 2 * 3);
+				}
+			}
 		}
 	}
 
@@ -186,6 +192,11 @@
 		li {
 			a {
 				padding: 0 fs(10 * 2) !important;
+			}
+			li {
+				a {
+					padding: 0 fs(10 * 3) !important;
+				}
 			}
 		}
 	}

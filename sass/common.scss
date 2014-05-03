@@ -175,7 +175,7 @@ main,
 				}
 			}
 			
-			$guide: fileList($images_dir + "ico/*",true,".png");
+			$guide: fileList($images_dir + "ico/*",false,".png");
 			@each $img in $guide {
 				#{"&." + $img + " a"} {	
 					background-image: inline-image("ico/#{$img}.png");

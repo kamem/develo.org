@@ -11,7 +11,7 @@ module Develo
 		dirs = Dir.glob(dir.value)
 		dirs.each_with_index do |li,i|
 			
-			if isDir == true then
+			if isDir.to_s == "true" then
 				file = li
 			else
 				if extname == false
