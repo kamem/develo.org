@@ -15,7 +15,7 @@
 //	$retina: true or false
 $imgWidth: ();
 $imgHeight: ();
-@mixin background-fit($img,$widthFixed: true,$value: '0 0 no-repeat',$important: '',$retina: $isRetina) {
+@mixin background-fit($img,$widthFixed: true,$value: '0 0 no-repeat',$important: '',$base64: $isBase64,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$imgList : ();
 	$widthHeightList : ();
@@ -36,7 +36,11 @@ $imgHeight: ();
 		@if $isFile {
 			$width: round(image-width($i) / $retinaSuport);
 			$height: round(image-height($i) / $retinaSuport);
-			$image: image-url($i);
+			@if($base64) {
+				$image: inline-image($i);
+			} @else {
+				$image: image-url($i);
+			}
 		} @else {
 			$width: auto;
 			$height: auto;
