@@ -31,8 +31,8 @@ main,
 	$font-size: 16;
 	$header-bg: "common/header_bg.gif";
 	background:
-	inline-image("common/border.png") repeat-x center fs(3),
-	inline-image("common/border.png") repeat-x center fs($header-height - 6),
+	inline-image("common/border.png") repeat-x center es(3),
+	inline-image("common/border.png") repeat-x center es($header-height - 6),
 	inline-image($header-bg);
 		
 	background/*\**/: image-url($header-bg) \9;
@@ -40,14 +40,14 @@ main,
 
 	@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 
-	height: fs($header-height);
+	height: es($header-height);
 	position: relative;
 	z-index: 2;
 
 	h1 {
 		margin: 0 auto;
-		max-width: fs($base-width-big);
-		height: fs($header-height);
+		max-width: es($base-width-big);
+		height: es($header-height);
 		background: rgba(#fff,0.2);
 		@include fz($font-size);
 
@@ -61,12 +61,12 @@ main,
 			display: block;
 			overflow: hidden;
 			position: relative;
-			top: fs(($header-height - $title-height) / 2);
-			left: fs(($base-width-big - $base-width) / 2);
+			top: es(($header-height - $title-height) / 2);
+			left: es(($base-width-big - $base-width) / 2);
 			background: image-url($title-img) no-repeat left center;
 			background: inline-image($title-img) no-repeat left center;
-			padding-top: fs($title-height);
-			max-width: fs($title-width);
+			padding-top: es($title-height);
+			max-width: es($title-width);
 			height: 0;
 			background-size: contain;
 			@include transition(0.13s ease-in-out);
@@ -76,16 +76,16 @@ main,
 			}
 		}
 
-		@media screen and (max-width:  fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+		@media screen and (max-width:  es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 			a {
-				left: fs(10);
+				left: es(10);
 			}
 		}
-		@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+		@media screen and (max-width:  es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 			a {
 				width: auto;
 				background-size: 100%;
-				margin-right: fs(215);
+				margin-right: es(215);
 			}
 		}
 	}
@@ -96,9 +96,9 @@ main,
 	
 	.topicpath {
 		$font-size : 11;
-		margin: fs($font-size) auto 0 auto;
-		padding: 0 fs(($base-width-big - $base-width) / 2);
-		max-width: fs($base-width);
+		margin: es($font-size) auto 0 auto;
+		padding: 0 es(($base-width-big - $base-width) / 2);
+		max-width: es($base-width);
 		position: relative;
 		line-height: $font-size + px;
 		
@@ -121,8 +121,8 @@ main,
 			}
 		}
 		
-	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
-		padding: 0 fs(10);
+	@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+		padding: 0 es(10);
 		visibility: hidden;
 	}
 	}
@@ -136,26 +136,26 @@ main,
 		$img-size: 28;
 		$img-size-big: 34;
 
-		margin: fs(-($header-height + 22)) auto 0 auto;
-		max-width: fs($base-width-big);
+		margin: es(-($header-height + 22)) auto 0 auto;
+		max-width: es($base-width-big);
 		text-align: right;
-		height: fs($header-height);
+		height: es($header-height);
 		
 		li {
-			margin-right: fs(12);
+			margin-right: es(12);
 			@include inline-block;
 			position: relative;
-			top: fs(8);
-			right: fs(($base-width-big - $base-width) / 2);
+			top: es(8);
+			right: es(($base-width-big - $base-width) / 2);
 			line-height: 1;
 			z-index: 2;
 			@include fz($font-size);
 			
 			a {
-				padding-top: fs($img-size-big);
-				min-width: fs($img-size-big);
-				background: no-repeat center fs(($img-size-big - $img-size) / 2);
-				background-size: fs($img-size);
+				padding-top: es($img-size-big);
+				min-width: es($img-size-big);
+				background: no-repeat center es(($img-size-big - $img-size) / 2);
+				background-size: es($img-size);
 				display: block;
 				color: #fff;
 				text-decoration: none;
@@ -163,15 +163,15 @@ main,
 				@include transition(0.05s ease-in-out);
 				text-align: center;
 				
-				#{"/"}padding-top: fs(17);
-				padding-top/*\**/: fs(17) \9;
+				#{"/"}padding-top: es(17);
+				padding-top/*\**/: es(17) \9;
 				#{"/"}background: transparent !important;
 				background/*\**/:  transparent \9 !important;
 				
 				&:hover {
 					color: #ff0 !important;
 					background-position: center top;
-					background-size: fs($img-size-big);
+					background-size: es($img-size-big);
 				}
 			}
 			
@@ -183,19 +183,19 @@ main,
 			}
 		}
 		
-		@media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
+		@media screen and (max-width: es($mediaQuery-large,rem,$mediaQuery-baseSize)) {
 			li {
-				margin-right: fs(10);
-				top: fs(15);
-				right: fs(7.5);
+				margin-right: es(10);
+				top: es(15);
+				right: es(7.5);
 				
 				&.rss {
 					display: none;	
 				}
 				
 				a {
-					width: fs(34);
-					padding-top: fs(34);
+					width: es(34);
+					padding-top: es(34);
 					@include transition(none);
 					height: 0;
 					overflow: hidden;
@@ -216,7 +216,7 @@ main,
 		$margin: 5;
 
 		margin: 0 auto;
-		max-width: fs($base-width-big);
+		max-width: es($base-width-big);
 		position: relative;
 		@include fz($font-size);
 		@include transition(0.13s ease-in-out);
@@ -244,8 +244,8 @@ main,
 			$width: 58;
 			$border: 1;
 
-			width: fs($width);
-			line-height: fs($line-height);
+			width: es($width);
+			line-height: es($line-height);
 			@include fz($font-size);
 			overflow: hidden;
 			float: left;
@@ -254,16 +254,16 @@ main,
 			@include box-sizing(content-box !important);
 
 			&#search-text {
-				margin: fs($margin);
-				padding: fs($padding);
-				padding-right: fs($width);
-				margin-right: fs(-($width + $border));
-				width: fs(202);
+				margin: es($margin);
+				padding: es($padding);
+				padding-right: es($width);
+				margin-right: es(-($width + $border));
+				width: es(202);
 			}
 			
 			&.button {
-				margin: fs($margin) fs($margin) 0 0;
-				padding: fs($padding) 0;
+				margin: es($margin) es($margin) 0 0;
+				padding: es($padding) 0;
 				@include box-shadow(none);
 				@include border-radius(30px !important);
 			}
@@ -303,9 +303,9 @@ main {
 	
 		margin: 0 auto;
 		border-bottom: $boder + px solid #fff;
-		padding: fs($padding) fs($font-size);
+		padding: es($padding) es($font-size);
 		@include fz($font-size);
-		line-height: fs($line-height);
+		line-height: es($line-height);
 		color: #fff;
 		text-align: center;
 		background: inline-image("common/entry_bg.gif");
@@ -327,14 +327,14 @@ main {
 		border-top: $boder + px solid #fff;
 		
 		margin: 0 auto;
-		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
-		padding: fs($padding) fs(($base-width-big - $base-width) / 2);
-		line-height: fs($line-height);
+		margin-bottom: es(silver-ratio($fix-height) - $fix-height);
+		padding: es($padding) es(($base-width-big - $base-width) / 2);
+		line-height: es($line-height);
 		@include fz($font-size);
 
 		font-weight: normal;
 		color: #500;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 	
 		background: inline-image('common/dot.gif')
 			repeat
@@ -343,9 +343,9 @@ main {
 		 
 		@include text-shadow-repeat(1px 1px 2px #fff,5);
 		
-		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-			padding-right: fs(10);
-			padding-left: fs(10);
+		@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+			padding-right: es(10);
+			padding-left: es(10);
 		}
 	}
 		
@@ -359,17 +359,17 @@ main {
 		border-bottom: $boder + px solid #fff;
 		
 		margin: 0 auto;
-		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
-		padding: fs($padding) 0;
-		line-height: fs($line-height);
+		margin-bottom: es(silver-ratio($fix-height) - $fix-height);
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
 
 		color: #500;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-			padding-right: fs(10);
-			padding-left: fs(10);
+		@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+			padding-right: es(10);
+			padding-left: es(10);
 		}
 	}
 	
@@ -381,17 +381,17 @@ main {
 		$fix-height: $line-height + $padding * 2 + $boder * 2;
 		
 		margin: 0 auto;
-		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
-		padding: fs($padding) 0;
-		line-height: fs($line-height);
+		margin-bottom: es(silver-ratio($fix-height) - $fix-height);
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
 
 		color: #500;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-			padding-right: fs(10);
-			padding-left: fs(10);
+		@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+			padding-right: es(10);
+			padding-left: es(10);
 		}
 	}
 	
@@ -403,17 +403,17 @@ main {
 		$fix-height: $line-height + $padding * 2 + $boder * 2;
 		
 		margin: 0 auto;
-		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
-		padding: fs($padding) 0;
-		line-height: fs($line-height);
+		margin-bottom: es(silver-ratio($fix-height) - $fix-height);
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
 
 		color: #500;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-			padding-right: fs(10);
-			padding-left: fs(10);
+		@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+			padding-right: es(10);
+			padding-left: es(10);
 		}
 	}
 
@@ -425,21 +425,21 @@ main {
 		$fix-height: $line-height + $padding * 2 + $boder * 2;
 		
 		margin: 0 auto;
-		margin-bottom: fs(silver-ratio($fix-height) - $fix-height);
-		padding: fs($padding) 0;
-		line-height: fs($line-height);
+		margin-bottom: es(silver-ratio($fix-height) - $fix-height);
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
 
 		color: #500;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 
-		@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-			padding-right: fs(10);
-			padding-left: fs(10);
+		@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+			padding-right: es(10);
+			padding-left: es(10);
 		}
 	}
 	
-@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 	position: static;
 }
 }
@@ -452,7 +452,7 @@ main {
 
 	img {
 		margin: 0 auto;
-		width: fs($base-width);
+		width: es($base-width);
 		height: auto;
 		display: block;
 		
@@ -467,12 +467,12 @@ main {
 	dt,
 	dd {
 		margin: 0 auto;
-		line-height: fs($line-height);
-		letter-spacing: fs($letter-spacing);
+		line-height: es($line-height);
+		letter-spacing: es($letter-spacing);
 		color: #500;
 		@include fz($font-size);
 		
-		max-width: fs($em-width * ($font-size + $letter-spacing));
+		max-width: es($em-width * ($font-size + $letter-spacing));
 
 		dl,
 		ul,
@@ -490,11 +490,11 @@ main {
 	dl,
 	ul,
 	ol {
-		margin: fs(silver-ratio($font-size) + $font-size) 0;
+		margin: es(silver-ratio($font-size) + $font-size) 0;
 	}
 	
 	li {
-		margin-bottom: fs(silver-ratio($font-size));
+		margin-bottom: es(silver-ratio($font-size));
 	}
 
 	ul li {
@@ -503,27 +503,27 @@ main {
 	
 	figure,
 	p {
-		margin: fs(silver-ratio($font-size) + $font-size) auto;
+		margin: es(silver-ratio($font-size) + $font-size) auto;
 	}
 
 	figure {
 		img {
-			margin-bottom: fs(19,16);
+			margin-bottom: es(19,16);
 		}
 	}
 	
 	figcaption {
-		margin-top: fs(silver-ratio($font-size) - $font-size);
+		margin-top: es(silver-ratio($font-size) - $font-size);
 	}
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	figure,
 	p,
 	li,
 	dt,
 	dd {
-		margin-right: fs(10);
-		margin-left: fs(10);
+		margin-right: es(10);
+		margin-left: es(10);
 	}
 }
 }
@@ -548,8 +548,8 @@ main {
 	
 	p.copyright {
 		$font-size: 13;
-		margin-left: fs($font-size);
-		line-height: fs(($base-width-big - $base-width) / 2);
+		margin-left: es($font-size);
+		line-height: es(($base-width-big - $base-width) / 2);
 		@include fz($font-size);
 		
 		small {

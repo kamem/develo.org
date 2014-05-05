@@ -19,13 +19,13 @@
 ----------------------------------------*/
 .main {
 	$font-size: 16;
-	margin: fs(silver-ratio($font-size) + $font-size) auto !important;
-	max-width: fs($base-width-big) !important;
-	max-height: fs(silver-ratio($base-width-big) - $base-width-big) !important;
+	margin: es(silver-ratio($font-size) + $font-size) auto !important;
+	max-width: es($base-width-big) !important;
+	max-height: es(silver-ratio($base-width-big) - $base-width-big) !important;
 	overflow: hidden;
 	
 	img {
-		width: fs($base-width-big);
+		width: es($base-width-big);
 	}
 }
 
@@ -54,8 +54,8 @@ table img {
 	Float
 ----------------------------------------*/
 figure.img_R img {
-	margin-left: fs(($base-width-big - $base-width) / 2);
-	width: fs($base-width - silver-ratio($base-width,true)) !important;
+	margin-left: es(($base-width-big - $base-width) / 2);
+	width: es($base-width - silver-ratio($base-width,true)) !important;
 	float: right;
 	height: auto;
 	
@@ -68,7 +68,7 @@ figure.img_R img {
 	more
 ----------------------------------------*/
 p.more {
-	margin-bottom:  fs(silver-ratio(-$font-size)) !important;
+	margin-bottom:  es(silver-ratio(-$font-size)) !important;
 }
 
 /*----------------------------------------
@@ -77,16 +77,16 @@ p.more {
 .reaction {
 	$font-size: 16;
 	margin: 0 auto;
-	max-width: fs($base-width,16);
-	line-height: fs(silver-ratio($font-size));
+	max-width: es($base-width,16);
+	line-height: es(silver-ratio($font-size));
 	text-align: right;
 	@include fz($font-size);
 
 	li {
-		margin-left: fs($font-size);
+		margin-left: es($font-size);
 		@include inline-block;
 	}
-	@media screen and (max-width: fs($mediaQuery-middle,rem,16)) {
-		margin-right: fs(10);
+	@media screen and (max-width: es($mediaQuery-middle,rem,16)) {
+		margin-right: es(10);
 	}
 }

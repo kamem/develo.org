@@ -10,7 +10,7 @@
 	$padding: (silver-ratio($font-size) - $font-size) / 2;
 
 	a {
-		padding: fs($padding) 0;
+		padding: es($padding) 0;
 		display: block;
 		color: #fff;
 		text-align: center;
@@ -42,7 +42,7 @@ ul.download {
 	$fix-height: $line-height + $padding * 2;
 
 	overflow: hidden;
-	min-height: fs($fix-height);
+	min-height: es($fix-height);
 	clear: both;
 
 	li {
@@ -50,12 +50,12 @@ ul.download {
 		list-style-type: none;
 		
 		&.download {
-			margin-bottom: fs(-$fix-height) !important;
+			margin-bottom: es(-$fix-height) !important;
 		}
 		&.github {
 			a {
 				border-left: 2px solid #fff;
-				padding: fs($padding) fs($font-size);
+				padding: es($padding) es($font-size);
 				float: right;
 				position: relative;
 				@include background(linear-gradient(top, #8199a8 0%, #425c6c 100%));
@@ -64,7 +64,7 @@ ul.download {
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 	li {
 		&.download {
 			margin-bottom: 0 !important;

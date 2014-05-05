@@ -8,7 +8,7 @@ p.pagetop {
 	$line-height: silver-ratio($font-size) + $font-size;
 	$triangle-size: 10;
 
-	line-height: fs($line-height);
+	line-height: es($line-height);
 	padding: 0 1.5em;
 	@include fz($font-size);
 	text-align: right;
@@ -17,10 +17,10 @@ p.pagetop {
 	a {
 		&[href^="#"] {
 			position: relative;
-			padding-right: fs($triangle-size + 5);
+			padding-right: es($triangle-size + 5);
 
 			&:after {
-				@include triangle(fs($triangle-size) fs(8),$linkColor,top);
+				@include triangle(es($triangle-size) es(8),$linkColor,top);
 				position: absolute !important;
 				top: $size / -2 !important;
 				right: 0 !important;
@@ -40,9 +40,9 @@ p.pagetop {
 	.content & {
 		margin: 0 auto;
 		height: 0;
-		line-height: fs($line-height);
-		max-width: fs($base-width);
+		line-height: es($line-height);
+		max-width: es($base-width);
 		position: relative;
-		top: fs(-$line-height);
+		top: es(-$line-height);
 	}
 }

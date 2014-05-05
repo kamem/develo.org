@@ -6,9 +6,9 @@
 .categories {
 	$font-size: 16;
 	$line-height: silver-ratio($font-size);
-	padding: fs(5) 0;
+	padding: es(5) 0;
 	margin: 0 auto;
-	max-width: fs($base-width-big);
+	max-width: es($base-width-big);
 	background: #eee;
 	overflow: hidden;
 	
@@ -21,7 +21,7 @@
 	li{
 		float: left;
 		width: 20%;
-		line-height: fs($line-height);
+		line-height: es($line-height);
 		
 		#{"/"}width: 19.9%;
 
@@ -41,7 +41,7 @@
 			display: table-cell;
 			vertical-align: middle;
 			width: 20%;
-			height: fs(60);
+			height: es(60);
 
 			@include background(inline-image('common/white.gif') repeat-y left top,linear-gradient(top, #fcfcfc 0%, #f4f4f4 60%, #ededed 60%, #fcfcfc 100%));
 			#{"/"}background: #fff;
@@ -69,21 +69,21 @@
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	$font-size: 14;
 	li {
 		@include fz($font-size);
 	}
 }
 
-@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 	$font-size: 12;
 	$line-height: silver-ratio($font-size);
 	li {
 		@include fz($font-size);
-		line-height: fs($line-height);
+		line-height: es($line-height);
 		a {
-			height: fs(60);
+			height: es(60);
 		}
 	}
 }

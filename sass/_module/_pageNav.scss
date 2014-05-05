@@ -21,8 +21,8 @@
 		padding: 0 !important;
 		border: none !important;
 		background: none transparent;
-		max-width: fs($base-width-big) !important;
-		line-height: fs($fix-height) !important;
+		max-width: es($base-width-big) !important;
+		line-height: es($fix-height) !important;
 		margin: 0 auto;
 		@include fz($font-size);
 		
@@ -33,11 +33,11 @@
 		z-index: 2;
 		
 		a {
-			margin-right: fs(($base-width-big - $base-width) / 2);
-			padding: 0 fs(12) 0 fs(($base-width-big - $base-width) / 2);
+			margin-right: es(($base-width-big - $base-width) / 2);
+			padding: 0 es(12) 0 es(($base-width-big - $base-width) / 2);
 		
 			position: relative;
-			top: fs($border + $margin);
+			top: es($border + $margin);
 			display: block;
 			float: right;
 
@@ -59,7 +59,7 @@
 				position: absolute;
 				display: block;
 				top: 0 !important;
-				left: fs(12);
+				left: es(12);
 			}
 		}
 	}
@@ -91,10 +91,10 @@
 
 	ul,
 	ol {
-		padding-top: fs($margin);
-		margin: fs(silver-ratio($font-size) + $font-size) auto !important;
+		padding-top: es($margin);
+		margin: es(silver-ratio($font-size) + $font-size) auto !important;
 		border: $border + px solid #fff;
-		max-width: fs($base-width-big - $border * 2);
+		max-width: es($base-width-big - $border * 2);
 	
 		&.off {
 			display: none;
@@ -112,16 +112,16 @@
 	li {
 		margin: 0 auto !important;
 		padding: 0 !important;
-		margin-bottom: fs($margin) !important;
-		line-height: fs($line-height) !important;
-		letter-spacing: fs($letter-spacing);
-		max-width: fs($base-width-big - $border * 2 - $margin * 2) !important;
+		margin-bottom: es($margin) !important;
+		line-height: es($line-height) !important;
+		letter-spacing: es($letter-spacing);
+		max-width: es($base-width-big - $border * 2 - $margin * 2) !important;
 		display: block;
 		list-style-type: none;		list-style-position: outside;
 		background: none !important;
 		
 		a {
-			padding: fs($padding) fs(($base-width-big - $base-width) / 2);
+			padding: es($padding) es(($base-width-big - $base-width) / 2);
 			letter-spacing: 0.15em;
 			background: rgba(255,255,255,0.7);
 			#{"/"}background: #fff;
@@ -138,8 +138,8 @@
 			}
 			
 			&[href^="#"]:after {
-				top: fs(10);
-				right: fs(10);
+				top: es(10);
+				right: es(10);
 				position: absolute;
 				text-decoration: none;
 				display: block;
@@ -148,16 +148,16 @@
 		
 		li {
 			&:first-child {
-				margin-top: fs(2) !important;
+				margin-top: es(2) !important;
 			}
 
 			a {
-				padding: 0 fs(($base-width-big - $base-width) / 2 * 2);
+				padding: 0 es(($base-width-big - $base-width) / 2 * 2);
 			}
 			
 			li {
 				a {
-					padding: 0 fs(($base-width-big - $base-width) / 2 * 3);
+					padding: 0 es(($base-width-big - $base-width) / 2 * 3);
 				}
 			}
 		}
@@ -171,31 +171,31 @@
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-large,rem,$mediaQuery-baseSize)) {
 	li {
-		margin: 0 fs(2) !important;
-		margin-bottom: fs(2) !important;
+		margin: 0 es(2) !important;
+		margin-bottom: es(2) !important;
 
 		li {
 			margin: 0 !important;			
-			margin-bottom: fs(2) !important;
+			margin-bottom: es(2) !important;
 		}
 	}
 }
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	li {
 		a {
-			padding: fs($padding) fs(10);
+			padding: es($padding) es(10);
 		}
 		
 		li {
 			a {
-				padding: 0 fs(10 * 2) !important;
+				padding: 0 es(10 * 2) !important;
 			}
 			li {
 				a {
-					padding: 0 fs(10 * 3) !important;
+					padding: 0 es(10 * 3) !important;
 				}
 			}
 		}

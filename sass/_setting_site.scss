@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+//font
+$fontSizeDefault: 10;
+$font-size: 16;
+$font-unit: rem;
+$fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+
+//ページの横幅
+$base-width: 736;
+$base-width-big: 798;
+
 // 標準テキストカラー
 $textColor : #500;
 
@@ -10,26 +20,26 @@ $linkColor_hover : #f39;
 $linkColor_visited : rgba(#39c,0.7);
 $linkColor_active : #39c;
 
-
-$linkColor_hover : #f39;
-$linkColor_visited : rgba(#39c,0.7);
-$linkColor_active : #39c;
-
+// preのボーダーカラー
 $cssColor : #f0f;
 $jsColor :#900;
 $htmlColor : #00f;
 
+//headerの高さ
 $header-height: 65;
 
+//カテゴリーの名前
 $categories: htmlcss,javascript,artworks,design,diary;
+//カテゴリーカラー
 $htmlcssColor: #1ba5df;
 $javascriptColor: #900;
 $artworksColor: #ffa800;
 $designColor: #ef6dba;
 $diaryColor: #20c129;
+//カテゴリーカラー配列
 $category-colors: $htmlcssColor,$javascriptColor,$artworksColor,$designColor,$diaryColor;
 
-
+//mediaQueryの基準となる幅
 $mediaQuery-large: 798;
 $mediaQuery-middle: 756;
 $mediaQuery-small: 650;

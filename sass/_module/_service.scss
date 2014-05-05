@@ -16,8 +16,8 @@
 	width: $size + px;
 	height: $size + px;
 	position: absolute;
-	top: fs(nth($position,1));
-	right: fs(nth($position,2));
+	top: es(nth($position,1));
+	right: es(nth($position,2));
 	background: rgba(255,255,255,0.4);
 	clear: both;
 	
@@ -25,7 +25,7 @@
 	@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 
 	li {
-		margin-bottom: fs(3);
+		margin-bottom: es(3);
 		position: relative;
 		top: 50px;
 		left: 30px;
@@ -46,32 +46,32 @@
 		height: $size+ px;
 		background: rgba(255,255,255,0.3);
 		position: absolute;
-		top: fs(nth($position,1) + 10);
+		top: es(nth($position,1) + 10);
 		right: $size -10px;
 		@include border-radius($size + px);
 		@include box-shadow(1px 1px 3px rgba(0,0,0,0.2));
 	}
 
-	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
-		margin-left: fs(10) !important;
-		margin-right: fs(10) !important;
+	@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+		margin-left: es(10) !important;
+		margin-right: es(10) !important;
 	}
 
 	@media screen and (max-width: 77.187em) {
 		border: none;
 		margin: 0 auto;
-		margin-bottom: fs(-(silver-ratio($fix-height)));
-		max-width: fs($base-width);
+		margin-bottom: es(-(silver-ratio($fix-height)));
+		max-width: es($base-width);
 		position: static;
 		width: inherit;
-		height: fs(silver-ratio($fix-height));
+		height: es(silver-ratio($fix-height));
 		background: transparent;
 		@include box-shadow(none);
 		//overflow: hidden;
 		@include border-radius(0);
 
 		li {
-			margin: fs(5) fs(10) 0 0;
+			margin: es(5) es(10) 0 0;
 			position: static;
 			float: left;
 		}

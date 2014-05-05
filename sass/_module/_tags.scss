@@ -6,9 +6,9 @@
 ----------------------------------------*/
 .tags {
 	$font-size: 16;
-	padding-top: fs(silver-ratio($font-size));
+	padding-top: es(silver-ratio($font-size));
 	margin: 0 auto;
-	max-width: fs($base-width-big);
+	max-width: es($base-width-big);
 	@include fz($font-size);
 	clear: both;
 	
@@ -17,8 +17,8 @@
 		$line-height: silver-ratio($font-size);
 		$padding: (silver-ratio($font-size) - $font-size) / 2;
 		margin: 0 auto;
-		padding: fs($padding) 0;
-		line-height: fs($line-height);
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
 		font-weight: bold;
 		color: #500;
@@ -35,18 +35,18 @@
 		$fix-height: $line-height + $padding * 2 + $border * 2;
 		$triangle-size: 6;
 
-		margin-left: fs($triangle-size);
-		margin-bottom: fs(3);
+		margin-left: es($triangle-size);
+		margin-bottom: es(3);
 		@include inline-block;
 		@include fz($font-size);
-		line-height: fs($font-size);
+		line-height: es($font-size);
 			
 		&:hover {
 			@include rotate(3deg);
 		}
 		
 		a {
-			padding: fs($padding) fs(5);
+			padding: es($padding) es(5);
 			border: $border + px #fff,0.7;
 			
 			background: #fff;
@@ -54,13 +54,13 @@
 			text-decoration: none;
 
 			@include border-radius(0 2px 2px 0);
-			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
+			@include triangle-set(es($fix-height) es($triangle-size),#fff,left);
 		
 			@include box-shadow(1px1px 1px rgba(0,0,0,0.2));
 		}
 	}
-@media screen and (max-width: fs($mediaQuery-large,rem,$mediaQuery-baseSize)) {
-	margin-left: fs(10);
-	margin-right: fs(10);
+@media screen and (max-width: es($mediaQuery-large,rem,$mediaQuery-baseSize)) {
+	margin-left: es(10);
+	margin-right: es(10);
 }
 }

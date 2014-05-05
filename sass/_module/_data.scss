@@ -10,8 +10,8 @@
 	$fix-height: $font-size + $padding * 2;
 
 	margin: 0 auto;
-	max-width: fs($base-width);
-	padding: 0 fs(($base-width-big - $base-width) / 2);
+	max-width: es($base-width);
+	padding: 0 es(($base-width-big - $base-width) / 2);
 	overflow: hidden;
 	
 	background: rgba(255,255,255,0.8);
@@ -22,9 +22,9 @@
 	@include box-shadow(1px 1px 2px rgba(0,0,0,0.05));
 	
 	li {
-		padding: fs($padding) 0;
-		margin-right: fs($font-size);
-		line-height: fs($line-height) !important;
+		padding: es($padding) 0;
+		margin-right: es($font-size);
+		line-height: es($line-height) !important;
 		@include fz($font-size);
 
 		float: left;
@@ -51,11 +51,11 @@
 			$fix-height: $line-height + $padding * 2 + $border * 2;
 			$triangle-size: 6;
 	
-			margin-left: fs($triangle-size);
+			margin-left: es($triangle-size);
 			@include fz($font-size);
-			line-height: fs($font-size);
+			line-height: es($font-size);
 					
-			padding: fs($padding) fs(5);
+			padding: es($padding) es(5);
 			border: $border + px #fff,0.7;
 			text-decoration: none;
 			
@@ -63,7 +63,7 @@
 			position: relative;
 
 			@include border-radius(0 2px 2px 0);
-			@include triangle-set(fs($fix-height) fs($triangle-size),#fff,left);
+			@include triangle-set(es($fix-height) es($triangle-size),#fff,left);
 			
 			@include box-shadow(1px1px 1px rgba(0,0,0,0.2));
 
@@ -73,18 +73,18 @@
 		}
 	}
 
-	@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
-		padding: 0 fs(10);
+	@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+		padding: 0 es(10);
 	}
 	
-	@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+	@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 		margin: 0 auto;
 		font-size: fz(11);
-		max-width: fs(736);
-		padding: 0 fs(10) !important;
+		max-width: es(736);
+		padding: 0 es(10) !important;
 		
 		li {
-			padding: fs(5) 0 fs(5) 0;
+			padding: es(5) 0 es(5) 0;
 		}
 	}
 }
@@ -95,7 +95,7 @@ a {
 	&.artworks,
 	&.design,
 	&.diary {
-		padding: fs(2) fs(5);
+		padding: es(2) es(5);
 		color: #fff;
 		text-decoration: none;
 		@include border-radius(2px);

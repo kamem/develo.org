@@ -11,11 +11,11 @@ dl.table {
 	$padding: silver-ratio($font-size) - $font-size;
 	$width:  $base-width - silver-ratio($base-width,true);
 
-	margin: fs(silver-ratio($font-size) + $font-size) auto !important;
+	margin: es(silver-ratio($font-size) + $font-size) auto !important;
 
 	@include background(linear-gradient(left, #fff 0%, #fff 29.3478%, rgba(#fff,0.3) 29.3478%,  rgba(#fff ,0) 100%));
 	@include background-origin(padding-box);
-	max-width: fs($base-width);
+	max-width: es($base-width);
 
 	#{"/"}background: #fff;
 	background/*\**/: #fff \9;
@@ -36,7 +36,7 @@ dl.table {
 	
 	dt,
 	dd {
-		line-height: fs($line-height);
+		line-height: es($line-height);
 		
 		img {
 			vertical-align: middle;
@@ -51,10 +51,10 @@ dl.table {
 	dt {
 		border-top: 2px solid #dcc;
 		margin: 0 !important;
-		margin-right: fs(-$width,'%',$base-width) !important;
-		padding: fs($padding) 0;
-		padding-left: fs($font-size);
-		width: fs($width,'%',$base-width);
+		margin-right: es(-$width,'%',$base-width) !important;
+		padding: es($padding) 0;
+		padding-left: es($font-size);
+		width: es($width,'%',$base-width);
 		float: left;
 		clear: both;
 		display: inline;
@@ -66,8 +66,8 @@ dl.table {
 
 	dd {
 		margin: 0 !important;
-		margin-left: fs($width,'%',$base-width) !important;
-		padding: fs($padding) fs($font-size);
+		margin-left: es($width,'%',$base-width) !important;
+		padding: es($padding) es($font-size);
 		border-left: 1px solid #edd;
 		border-top: 2px solid #dcc;
 		
@@ -79,7 +79,7 @@ dl.table {
 		}
 	}
 
-	@media screen and (max-width:  fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+	@media screen and (max-width:  es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
 		background: transparent;
 		
 		dt {
@@ -89,7 +89,7 @@ dl.table {
 			font-weight: bold;
 			
 			&:after {
-				padding: 0 fs($padding) 0 0;
+				padding: 0 es($padding) 0 0;
 				content: ' : ';
 			}
 		}

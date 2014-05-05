@@ -11,12 +11,12 @@ pre {
 	$boder: 2;
 
 	border: $boder + px solid #fff;
-	margin: 0 auto fs(silver-ratio($font-size) + $font-size) auto;
-	padding: fs(8) fs(10);
+	margin: 0 auto es(silver-ratio($font-size) + $font-size) auto;
+	padding: es(8) es(10);
 
-	line-height: fs($line-height);
+	line-height: es($line-height);
 	@include fz($font-size);
-	max-width: fs($base-width);
+	max-width: es($base-width);
 	letter-spacing: 0;
 
 	position: relative;
@@ -89,7 +89,7 @@ legend {
 input,
 textarea {
 	$font-size: 16;
-	padding: fs(8) fs(10);
+	padding: es(8) es(10);
 	border: 2px solid #fff;
 	background: #fff;
 	font-family: Arial, Helvetica, sans-serif;
@@ -140,7 +140,7 @@ textarea:hover {
 
 input:focus,
 textarea:focus {
-	border: fs(2) solid $linkColor;
+	border: es(2) solid $linkColor;
 	background-color: #fff;
 }
 
@@ -149,8 +149,8 @@ textarea:focus {
 ----------------------------------------*/
 ins {
 	$font-size: 16;
-	margin: fs(silver-ratio($font-size + $font-size)) auto;
-	max-width: fs($base-width-big);
+	margin: es(silver-ratio($font-size + $font-size)) auto;
+	max-width: es($base-width-big);
 	border: 7px solid $linkColor;
 	display: block;
 	text-decoration: none;
@@ -163,7 +163,7 @@ hr {
 	height: 22px;
 	background: inline-image("common/section.png") no-repeat center top;
 	@include fz($font-size);
-	margin-bottom: fs(silver-ratio($font-size) + $font-size);
+	margin-bottom: es(silver-ratio($font-size) + $font-size);
 }
 
 /*----------------------------------------
@@ -171,10 +171,10 @@ hr {
 ----------------------------------------*/
 blockquote {
 	$font-size: 16;
-	margin: fs(silver-ratio($font-size) + $font-size) auto;
+	margin: es(silver-ratio($font-size) + $font-size) auto;
 	color: $textColor;
 	background: rgba(#fff,0.5);
-	max-width: fs($base-width-big);
+	max-width: es($base-width-big);
 	position: relative;
 	
 }
@@ -183,16 +183,16 @@ blockquote[title]::before {
 	$font-size: 16;
 	$line-height: silver-ratio($font-size);
 	$padding: (silver-ratio($font-size) - $font-size) / 2;
-	padding: fs($padding) fs(($base-width-big - $base-width) / 2);
+	padding: es($padding) es(($base-width-big - $base-width) / 2);
 	content: attr(title);
 	display: block;
 	@include fz($font-size);
-	line-height: fs($line-height);
+	line-height: es($line-height);
 	background: #fff;
 
-	@media screen and (max-width: fs($mediaQuery-small,rem,$mediaQuery-baseSize)) {
-		padding-right: fs(10);
-		padding-left: fs(10);
+	@media screen and (max-width: es($mediaQuery-small,rem,$mediaQuery-baseSize)) {
+		padding-right: es(10);
+		padding-left: es(10);
 	}
 }
 

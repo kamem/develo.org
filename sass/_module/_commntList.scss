@@ -6,17 +6,17 @@
 dl.commentList {
 	$font-size: 16;
 	$line-height: silver-ratio($font-size);
-	margin: fs(silver-ratio($font-size) + $font-size) 0 0 0;
-	padding-bottom: fs($line-height);
+	margin: es(silver-ratio($font-size) + $font-size) 0 0 0;
+	padding-bottom: es($line-height);
 	
 	dt {
 		margin: 0 auto;
-		padding-top: fs($line-height);
-		margin-top: fs($line-height);
+		padding-top: es($line-height);
+		margin-top: es($line-height);
 		border-top: 1px solid #dcc;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 		color: #500;
-		line-height: fs($line-height);
+		line-height: es($line-height);
 		list-style-type: none;
 
 		#{"/"}width: 36.5em;
@@ -25,24 +25,24 @@ dl.commentList {
 	dd {
 		margin: 0 auto;
 		display: list-item;
-		max-width: fs($base-width);
+		max-width: es($base-width);
 		color: #500;
-		line-height:  fs($line-height);
+		line-height:  es($line-height);
 		list-style-type: disc;
 
 		#{"/"}width: 36.5em;
 		
 		&:last-child {
-			padding-bottom: fs($line-height);
+			padding-bottom: es($line-height);
 			border-bottom: 1px solid #dcc;
 		}
 	}
 
-@media screen and (max-width: fs($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
+@media screen and (max-width: es($mediaQuery-middle,rem,$mediaQuery-baseSize)) {
 	dt,
 	dd {
-		margin-right: fs(10);
-		margin-left: fs(10);
+		margin-right: es(10);
+		margin-left: es(10);
 	}
 }
 }
