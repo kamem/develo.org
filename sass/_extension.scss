@@ -371,7 +371,7 @@ $size: '';
 // $size: 変換したいサイズ
 // $unit: 変換したい単位（%,em,rem,px）
 // $context: 変換の基準となる値
-@function es($size, $unit: $font-unit, $context: $fontSizeDefault){
+@function es($size, $unit: $font-unit, $context: $font-sizeDefault){
 	@if $unit == '%' {
 		@return #{$size / $context * 100}#{$unit};
 	} @else if $unit == px {
@@ -388,7 +388,7 @@ $size: '';
 //
 // $size: 変換したいサイズ
 // $context: 変換の基準となる値
-@mixin fz($size,$important : '', $unit: $font-unit, $context: $fontSizeDefault) {
+@mixin fz($size,$important : '', $unit: $font-unit, $context: $font-sizeDefault) {
     $value: if($unit == rem or $unit == em,$size / $context,if($unit == '%',$size / $context * 100,$size));
     $num: round-decimal($value, 2);
     @if($unit == rem) {
@@ -412,7 +412,7 @@ $size: '';
 
 
 @function fz($size) {
-	$fontSizefz: $size / $fontSizeDefault;
+	$fontSizefz: $size / $font-sizeDefault;
 	@return $fontSizefz * 100%;
 }
 
