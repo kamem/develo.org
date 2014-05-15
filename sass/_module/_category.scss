@@ -43,7 +43,7 @@
 			width: 20%;
 			height: es(60);
 
-			@include background(inline-image('common/white.gif') repeat-y left top,linear-gradient(top, #fcfcfc 0%, #f4f4f4 60%, #ededed 60%, #fcfcfc 100%));
+			@include background(inline-image('common/white.gif') repeat-y left top,#fafafa);
 			#{"/"}background: #fff;
 			background/*\**/: #fff \9;
 			#{"/"}height: 1%;
