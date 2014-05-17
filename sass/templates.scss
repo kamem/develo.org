@@ -121,7 +121,7 @@ body#index {
 			}
 		}
 		
-		@media screen and (max-width: 51.125em) {
+		@media screen and (max-width:  es($mediaQuery-large,rem,$mediaQuery-baseSize)) {
 			h1 {
 				margin-left: es(10) !important;
 				margin-right: es(10) !important;

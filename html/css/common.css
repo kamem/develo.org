@@ -521,13 +521,21 @@ main h6 {
   display: none;
 }
 #footer p.copyright {
-  margin-left: 1.3rem;
-  line-height: 3.1rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  line-height: 1.8rem;
   font-size: 13px;
   font-size: 1.3rem;
+  max-width: 79.8rem;
 }
 #footer p.copyright small {
   color: #fff;
+}
+@media screen and (max-width: 49.875rem) {
+  #footer p.copyright {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
 }
 
 /*----------------------------------------

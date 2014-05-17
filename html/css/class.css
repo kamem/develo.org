@@ -667,6 +667,11 @@ p.pagetop {
   font-size: 1.3rem;
   text-align: right;
   letter-spacing: 0;
+  margin: 0 auto;
+  height: 0;
+  line-height: 3.1rem;
+  max-width: 73.6rem;
+  position: relative;
 }
 p.pagetop a[href^="#"] {
   position: relative;
@@ -685,16 +690,23 @@ p.pagetop a[href^="#"]:after {
 p.pagetop a[href^="#"]:hover:after {
   border-bottom-color: #ff3399;
 }
-p.pagetop:last-child {
-  background: rgba(255, 255, 255, 0.45);
-}
 .content p.pagetop {
-  margin: 0 auto;
-  height: 0;
-  line-height: 3.1rem;
-  max-width: 73.6rem;
-  position: relative;
   top: -3.1rem;
+}
+p.pagetop:last-child {
+  height: auto;
+  max-width: 79.8rem;
+}
+p.pagetop:last-child a {
+  /*
+  color: #fff;
+  line-height: ($line-height + $padding * 2) / 10;
+  &:after {
+  	border-bottom-color: #fff !important;
+  }
+  &:hover {
+  	@include opacity(0.7);
+  }*/
 }
 
 /*----------------------------------------

@@ -108,7 +108,7 @@ body.category main article article.off .data,
 body#index article article.off .data {
   margin-bottom: 2px;
 }
-@media screen and (max-width: 51.125em) {
+@media screen and (max-width: 49.875rem) {
   body.search main article article h1,
   body.category main article article h1,
   body#index article article h1 {

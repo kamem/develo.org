@@ -13,6 +13,12 @@ p.pagetop {
 	@include fz($font-size);
 	text-align: right;
 	letter-spacing: 0;
+
+	margin: 0 auto;
+	height: 0;
+	line-height: es($line-height);
+	max-width: es($base-width);
+	position: relative;
 	
 	a {
 		&[href^="#"] {
@@ -33,16 +39,27 @@ p.pagetop {
 		}
 	}
 	
-	&:last-child {
-		background: rgba(#fff,0.45);
+	.content & {
+		top: es(-$line-height);
 	}
 	
-	.content & {
-		margin: 0 auto;
-		height: 0;
-		line-height: es($line-height);
-		max-width: es($base-width);
-		position: relative;
-		top: es(-$line-height);
+	&:last-child {
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size);
+		
+		height: auto;
+		max-width: es($base-width-big);
+		
+		a {
+			/*
+			color: #fff;
+			line-height: ($line-height + $padding * 2) / 10;
+			&:after {
+				border-bottom-color: #fff !important;
+			}
+			&:hover {
+				@include opacity(0.7);
+			}*/
+		}
 	}
 }

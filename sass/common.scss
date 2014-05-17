@@ -548,14 +548,25 @@ main {
 	
 	p.copyright {
 		$font-size: 13;
-		margin-left: es($font-size);
-		line-height: es(($base-width-big - $base-width) / 2);
+		$line-height: silver-ratio($font-size);
+		$padding: (silver-ratio($font-size) - $font-size);
+		margin: 0 auto;
+		padding: es($padding) 0;
+		line-height: es($line-height);
 		@include fz($font-size);
+		max-width: es($base-width-big);
 		
 		small {
 			color: #fff;
 		}
 	}
+
+@media screen and (max-width:  es($mediaQuery-large,rem,$mediaQuery-baseSize)) {
+	p.copyright {
+		margin-right: es(10);
+		margin-left: es(10);
+	}
+}
 }
 
 /*----------------------------------------
