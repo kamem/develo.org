@@ -154,6 +154,7 @@ main,
   -o-transition: 0.05s ease-in-out;
   transition: 0.05s ease-in-out;
   text-align: center;
+  /padding-top: 1.7rem;
   /background: transparent !important;
   background/*\**/: transparent \9 !important;
 }
