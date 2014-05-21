@@ -721,6 +721,7 @@ p.pagetop:last-child a {
   right: 2rem;
   background: rgba(255, 255, 255, 0.4);
   clear: both;
+  overflow: hidden;
   -webkit-border-radius: 160px;
   -moz-border-radius: 160px;
   -ms-border-radius: 160px;
