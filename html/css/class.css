@@ -721,7 +721,6 @@ p.pagetop:last-child a {
   right: 2rem;
   background: rgba(255, 255, 255, 0.4);
   clear: both;
-  overflow: hidden;
   -webkit-border-radius: 160px;
   -moz-border-radius: 160px;
   -ms-border-radius: 160px;
@@ -737,6 +736,8 @@ p.pagetop:last-child a {
   top: 50px;
   left: 30px;
   font-size: 0;
+  width: 120px;
+  overflow: hidden;
 }
 .service li.twitter {
   width: 100px;
