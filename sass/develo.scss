@@ -60,6 +60,18 @@ pre {
 		}
 	}
 }
+/*----------------------------------------
+	code
+----------------------------------------*/
+*:not(pre) > code {
+	margin: 0 0.15em;
+	padding: 0.13em 0.35em;
+	background-color: #f5f5f5;
+    
+	@include text-shadow-repeat(1px 1px 2px #fff,4);
+	@include border-radius(2px);
+	@include box-shadow(0 0 3px rgba(0,0,0,.3));
+}
 
 /*----------------------------------------
 	em
