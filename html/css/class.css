@@ -808,6 +808,9 @@ p.pagetop:last-child a {
   font-size: 1.6rem;
   clear: both;
 }
+.tags h1 {
+  display: none;
+}
 .tags dt {
   margin: 0 auto;
   padding: 0.4rem 0;

@@ -12,6 +12,10 @@
 	@include fz($font-size);
 	clear: both;
 	
+	h1 {
+		display: none;
+	}
+	
 	dt {
 		$font-size: 20;
 		$line-height: silver-ratio($font-size);
